@@ -4,6 +4,5 @@ class AddAttributesToTribes < ActiveRecord::Migration[5.2]
     add_column :tribes, :address, :string
     add_column :tribes, :description, :string
     add_column :tribes, :subscribed_on, :date
-    add_reference :tribes, :user, foreign_key: true
   end
 end
