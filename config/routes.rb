@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'newspapers/show'
 
   resources :tribes
-
+  # resources :pictures
 
   devise_for :users
   resources :users, only: [:edit, :show, :update]
