@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/update'
   get 'newspapers/index'
   get 'newspapers/show'
+
   resources :tribes
   devise_for :users, only: [:edit, :show, :update]
   root to: 'tribes#index'
