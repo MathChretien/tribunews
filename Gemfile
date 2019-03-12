@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
-
+#adding devise to project
 gem 'devise'
+#adding devise email support to project
+gem 'devise_invitable', '~> 2.0.0'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
