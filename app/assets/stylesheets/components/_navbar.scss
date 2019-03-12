@@ -25,8 +25,9 @@
 /* Right section */
 .navbar-wagon-right {
   display: flex;
+  flex-grow: 1;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 /* Basic navbar item */
