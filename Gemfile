@@ -9,8 +9,6 @@ gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
 gem 'bootstrap', '~> 4.0'
-gem 'cloudinary'
-gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 

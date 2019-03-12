@@ -238,9 +238,9 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  bootstrap (~> 4.0)
   carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
-  bootstrap (~> 4.0)
   devise
   dotenv-rails
   fog-aws
