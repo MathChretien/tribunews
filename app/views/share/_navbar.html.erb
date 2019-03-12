@@ -10,10 +10,8 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "action", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <!-- TODO LINK TO RESERVATIONS -->
-    <%= link_to "my account", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+    <!-- TODO LINK TO USER EDIT -->
+    <%= link_to "my account", edit_user_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
@@ -39,6 +37,7 @@
       </div>
     </div>
     <% else %>
+
     <!-- Login link (when logged out) -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -52,7 +51,7 @@
        <li><%= link_to "my account", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
        <% if user_signed_in? %>
        <!-- TODO LINK TO RESERVATIONS -->
-       <li><%= link_to "my reservations", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
+       <li><%= link_to "my account", edit_user_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
        <li>
         <!-- TODO: is this link_to user_path? -->
         <%= link_to "#" do %>
@@ -71,4 +70,4 @@
     </ul>
   </div>
 </div>
-ril
+
