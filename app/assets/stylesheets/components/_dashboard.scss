@@ -127,12 +127,26 @@
   color: $tribu-green;
 }
 
-.member-container{
-  background-color:red;
-
-}
-
 #demo {
   font-size: 60px;
   color: $tribu-green;
+}
+
+
+
+
+
+
+
+.member-container{
+  background-color:red;
+  display:inline-block;
+
+}
+.member-status{
+  // TO DO
+}
+.member-info{
+  display:flex;
+  font-size:25px;
 }
