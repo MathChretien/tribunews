@@ -1,0 +1,73 @@
+.wrapper {
+  background-color: #999;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  color: white; /* temp */
+}
+
+
+.library-pane {
+  background-color: #666;
+  /*width: 30%;*/
+  flex: 0 0 30%;
+/*  border: 1px solid green;
+*/
+}
+
+.middle-pane {
+  flex: 1 1 auto;
+  /*border: 1px solid green;*/
+}
+
+.layout-pane {
+  width: 20%;
+  display:hidden;
+  background-color: rgba(200,200,200,0.3)
+  flex: 0 0 150px;
+  /*border: 1px solid green;*/
+}
+
+.hidden {
+  display:none;
+}
+
+.library-header, .middle-header {
+  background: #333;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-byheader, .middle-byheader {
+  background: #555;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle-content {
+  display:flex;
+  height:100%;
+  padding:10px;
+}
+
+.page-back, .page-forward {
+  flex-grow:0;
+  display:flex;
+  align-items: center;
+}
+
+.arrow-sign {
+  display: block;
+  border: 1px solid green;
+  opacity:0.5;
+  font-size:25px;
+
+}
+
+.edit-pane {
+  /*display:flex;*/
+  flex-grow:1;
+}
