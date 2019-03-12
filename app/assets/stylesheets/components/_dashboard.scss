@@ -98,8 +98,9 @@
 }
 
 .member-list {
+
   width : 550px;
-  height : 800px;
+  min-height: 400px;
   background-color : white;
   margin: 10px;
   position: relative;
@@ -129,4 +130,23 @@
 #demo {
   font-size: 60px;
   color: $tribu-green;
+}
+
+
+
+
+
+
+
+.member-container{
+  background-color:red;
+  display:inline-block;
+
+}
+.member-status{
+  // TO DO
+}
+.member-info{
+  display:flex;
+  font-size:25px;
 }
