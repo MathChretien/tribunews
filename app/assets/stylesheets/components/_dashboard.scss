@@ -98,8 +98,9 @@
 }
 
 .member-list {
+
   width : 550px;
-  height : 800px;
+  min-height: 400px;
   background-color : white;
   margin: 10px;
   position: relative;
@@ -124,6 +125,11 @@
   display:inline;
   padding: 22px;
   color: $tribu-green;
+}
+
+.member-container{
+  background-color:red;
+
 }
 
 #demo {
