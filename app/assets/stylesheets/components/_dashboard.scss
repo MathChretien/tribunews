@@ -1,0 +1,132 @@
+.dashboard {
+}
+
+.sidebar {
+  position: relative;
+  width : 27;
+  height: 1000px;
+  background-color: white;
+}
+.title-sidebar {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width : 27%;
+  height : 50px;
+  background-image: linear-gradient(to right, $tribu-green, $tribu-yellow);
+  justify-content: center;
+  align-items: center;
+  text-color : white;
+}
+
+.action-sidebar {
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width : 27%;
+  height : 950px;
+  background-color: white;
+  justify-content: center;
+}
+
+.button-sidebar {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  display: inline-block;
+  padding: 25px;
+}
+
+.button-sidebar li {
+  list-style-type: none;
+  padding: 50px;
+}
+
+.main-content-dashboard {
+  display: flex;
+  position: relative;
+  width: 73%;
+  height: 1000px;
+  top: -1000px;
+  left: 27%;
+  background-color : #eeeeee;
+  padding: 15px;
+}
+
+.action-edit {
+  width : 500px;
+  height : 300px;
+  background-color : white;
+  margin: 10px;
+  position: relative;
+  right: -155px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $tribu-green;
+}
+
+.title-dashboard-button {
+  background-color: $tribu-green;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+}
+
+.countdown {
+  width : 800px;
+  height : 225px;
+  background-color : white;
+  border-color: $tribu-green;
+  margin: 10px;
+  position: relative;
+  bottom: -323px;
+  right: 278px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $tribu-green;
+  text-align: center;
+}
+
+.countdown-text {
+  font-size: 20px;
+  padding: 20px;
+
+}
+
+.member-list {
+  width : 550px;
+  height : 800px;
+  background-color : white;
+  margin: 10px;
+  position: relative;
+  right: 120px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $tribu-green;
+}
+
+.title-dashboard {
+  color: $tribu-green;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.counter {
+ text-align: center;
+}
+
+.description-counter li {
+  list-style-type: none;
+  display:inline;
+  padding: 22px;
+  color: $tribu-green;
+}
+
+#demo {
+  font-size: 60px;
+  color: $tribu-green;
+}
