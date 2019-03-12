@@ -1,6 +1,6 @@
 .wrapper {
   background-color: #999;
-  height:100vh;
+  height:91vh;
   overflow:hidden;
   display:flex;
   color: white; /* temp */
@@ -23,7 +23,7 @@
 .layout-pane {
   width: 20%;
   display:hidden;
-  background-color: rgba(200,200,200,0.3)
+  background-color: rgba(200,200,200,0.3);
   flex: 0 0 150px;
   /*border: 1px solid green;*/
 }
@@ -33,6 +33,7 @@
 }
 
 .library-header, .middle-header {
+  padding: 6px 2px 2px 2px;
   background: #333;
   height: 40px;
   display: flex;
@@ -61,7 +62,7 @@
 
 .arrow-sign {
   display: block;
-  border: 1px solid green;
+  // border: 1px solid green;
   opacity:0.5;
   font-size:25px;
 
