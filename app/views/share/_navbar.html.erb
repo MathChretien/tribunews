@@ -1,0 +1,73 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= image_tag "TRIBU_Logo_gradient_web_with_alpha.png", height: 50 %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+
+    <!-- Links when logged in -->
+    <!-- TODO LINK TO USER EDIT -->
+    <%= link_to "my account", edit_user_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <% if current_user.photo? %>
+        <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% else %>
+          <%= image_tag "default_user.png", height: 500, width: 500, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <!-- TODO: is this link_to user_path? -->
+            <%= link_to edit_user_registration_path(current_user) do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% else %>
+
+    <!-- Login link (when logged out) -->
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+       <li><%= link_to "my account", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+       <% if user_signed_in? %>
+       <!-- TODO LINK TO RESERVATIONS -->
+       <li><%= link_to "my account", edit_user_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+       <li>
+        <!-- TODO: is this link_to user_path? -->
+        <%= link_to "#" do %>
+        <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+      <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
