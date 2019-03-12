@@ -25,3 +25,4 @@ puts "generating pages"
   Page.create!(layout:1, newspaper: paper)
 end
 
+
