@@ -3,6 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   def new
     @new_resource = User.new
     @new_resource.build_tribe
+
   end
 
   private
