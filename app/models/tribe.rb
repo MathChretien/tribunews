@@ -6,8 +6,8 @@ class Tribe < ApplicationRecord
   after_create do
     return if self.newspapers.any?
     newspaper = self.newspapers.create(published_on: Date.today.end_of_month)
-    12.times do
-      newspaper.pages.create()
+    (1..12).each do |number|
+      newspaper.pages.create(number: number)
     end
   end
 
