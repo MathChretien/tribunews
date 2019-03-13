@@ -1,14 +1,10 @@
-<div class="main-body">
+<div class="main-body newspaper-show">
   <div class="wrapper">
     <div class="library-pane">
       <div class ="library-header">
-        <h2>Tribe : <%= @tribe.name%>'pictures</h2>
+        <h3><%= @tribe.name%>'pictures</h3>
       </div>
       <div class="library-byheader">
-    <%= current_user.first_name %>
-    <%= @tribe = current_user.tribe %>
-    <%= @tribe.id%>
-    <%= @tribe.name%>
 
      <%= simple_form_for @new_picture do |f| %>
         <%= f.input :photo %>
