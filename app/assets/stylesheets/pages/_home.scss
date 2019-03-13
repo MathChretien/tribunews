@@ -1,5 +1,7 @@
 // Specific CSS for your home-page
 .banner {
+  flex-grow: 1;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -18,4 +20,22 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.head-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  ;
+}
+.btn-success {
+  background-color: $tribu-green;
+  border-color: $tribu-green;
+}
+.btn-success:hover {
+  background-color: $tribu-green2;
+  border-color: $tribu-green2;
+  text-decoration: none;
+}
+.btn-success:active {
+  border-color: none;
 }

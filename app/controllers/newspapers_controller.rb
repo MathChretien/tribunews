@@ -3,5 +3,6 @@ class NewspapersController < ApplicationController
   end
 
   def show
+    @new_picture = Picture.new
   end
 end

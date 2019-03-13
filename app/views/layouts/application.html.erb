@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Tribu Family Newsletter</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -12,11 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
   <body>
-    <%= render 'share/navbar' %>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <div class="head-container">
+      <%= render 'share/navbar' %>
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render 'share/footer' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </div>
   </body>
 </html>

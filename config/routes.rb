@@ -12,11 +12,12 @@ Rails.application.routes.draw do
   get 'newspapers/show'
 
   resources :tribes
-
+  # resources :pictures
 
   devise_for :users, controllers: {registrations: "registrations"}
   resources :users, only: [:edit, :show, :update]
   root to: 'tribes#index'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
