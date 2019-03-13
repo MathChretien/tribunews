@@ -2,15 +2,20 @@
   <div class="wrapper">
     <div class="library-pane">
       <div class ="library-header">
-        <h2>Your tribe's pictures</h2>
+        <h2>Tribe : <%= @tribe.name%>'pictures</h2>
       </div>
       <div class="library-byheader">
-        <%= simple_form_for @new_picture do |f| %>
+    <%= current_user.first_name %>
+    <%= @tribe = current_user.tribe %>
+    <%= @tribe.id%>
+    <%= @tribe.name%>
+
+     <%= simple_form_for @new_picture do |f| %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: "btn btn-lg btn-succes", id:"btn-cloud-upload" %>
-        <% end %>
-      </div>
+      <% end %>
+
+    </div>
       <div class = "library-content">
       </div>
     </div>
