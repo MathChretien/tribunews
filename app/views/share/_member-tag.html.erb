@@ -3,7 +3,7 @@
     <!-- here show be a red or green dot for member status -->
   </div>
   <figure class="avatar-dashboard">
-    <%= image_tag("https://www.shareicon.net/data/256x256/2015/09/18/103160_man_512x512.png", alt: 'avatar', height: 40, width: 40) %>
+    <%= image_tag(current_user.photo, alt: 'avatar', height: 40, width: 40) %>
   </figure>
 
   <div class="member-info">
