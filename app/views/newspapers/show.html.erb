@@ -1,40 +1,44 @@
-<div class="main-body">
+<div class="main-body newspaper-show">
   <div class="wrapper">
     <div class="library-pane">
       <div class ="library-header">
-        <h2>Your tribe's pictures</h2>
+        <h3><%= @tribe.name%>'pictures</h3>
       </div>
       <div class="library-byheader">
-        <%= simple_form_for @new_picture do |f| %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: "btn btn-lg btn-succes", id:"btn-cloud-upload" %>
-        <% end %>
-      </div>
-      <div class = "library-content">
-      </div>
+
+       <%= simple_form_for @new_picture do |f| %>
+       <%= f.input :photo %>
+       <%= f.input :photo_cache, as: :hidden %>
+       <% end %>
+
+     </div>
+     <div class = "library-content">
+     </div>
+   </div>
+   <div class="middle-pane">
+    <div class ="middle-header">
+      <h2>Edit your pages</h2>
     </div>
-    <div class="middle-pane">
-      <div class ="middle-header">
-        <h2>Edit your pages</h2>
-      </div>
-      <div class="middle-byheader">
-        <div class="btn btn-lg">change layout</div>
-      </div>
-      <div class="middle-content">
-        <div class ="page-back">
-          <span class="arrow-sign"><i class="fas fa-arrow-circle-left"></i></span>
-        </div>
-        <div class="edit-pane">
-        </div>
-        <div class="page-forward">
-          <span class="arrow-sign"><i class="fas fa-arrow-circle-right"></i></span>
-        </div>
-      </div>
+    <div class="middle-byheader">
+      <div class="btn btn-lg">change layout</div>
     </div>
-    <div class="layout-pane ">
-      layout
+    <div class="middle-content">
+      <div class ="page-back">
+        <span class="arrow-sign"><i class="fas fa-arrow-circle-left"></i></span>
+      </div>
+      <div class="edit-pane">
+        <div class="page-edition">
+        </div>
+
+      </div>
+      <div class="page-forward">
+        <span class="arrow-sign"><i class="fas fa-arrow-circle-right"></i></span>
+      </div>
     </div>
   </div>
-  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+  <div class="layout-pane ">
+    layout
+  </div>
+</div>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 </div>

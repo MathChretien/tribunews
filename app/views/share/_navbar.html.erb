@@ -11,7 +11,8 @@
 
     <!-- Links when logged in -->
     <!-- TODO LINK TO USER EDIT -->
-    <%= link_to "my account", edit_user_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "my account", edit_user_registration_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %>
+
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
@@ -52,7 +53,7 @@
        <li><%= link_to "my account", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
        <% if user_signed_in? %>
        <!-- TODO LINK TO RESERVATIONS -->
-       <li><%= link_to "my account", edit_user_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link" %></li>
+
        <li>
         <!-- TODO: is this link_to user_path? -->
         <%= link_to "#" do %>

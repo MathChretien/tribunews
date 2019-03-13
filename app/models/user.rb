@@ -5,4 +5,5 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :tribe, optional: true
+  accepts_nested_attributes_for :tribe
 end
