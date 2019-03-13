@@ -36,8 +36,11 @@
 
       <div class="member-list">
         <h2 class= "title-dashboard"> Members of your Tribe </h2>
-        <%= render partial: 'share/member-action' %>
-       <%= render partial: 'share/member-tag', users: @users %>
+        <%= render  'share/member-action' %>
+
+        <% current_user.tribe.users.each do |user| %>
+       <%= render  'share/member-tag', user: user %>
+       <% end %>
       </div>
 
 
