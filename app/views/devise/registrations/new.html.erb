@@ -33,7 +33,9 @@
           <%= f.input :photo_cache, as: :hidden %>
 
           <%= f.fields_for :tribe do |p| %>
-            <%= p.input :name %>
+            <%= p.input :name,
+                        required: true,
+                        input_html: { autocomplete: "last_name" }%> %>
           <% end %>
 
         </div>

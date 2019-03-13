@@ -10,11 +10,6 @@
     <%= @tribe.id%>
     <%= @tribe.name%>
 
-     <%= simple_form_for @new_picture do |f| %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-      <% end %>
-
     </div>
       <div class = "library-content">
       </div>
@@ -31,6 +26,10 @@
           <span class="arrow-sign"><i class="fas fa-arrow-circle-left"></i></span>
         </div>
         <div class="edit-pane">
+          <div class="page-edition">
+            <h2> <%= @page.first%> </h2>
+          </div>
+
         </div>
         <div class="page-forward">
           <span class="arrow-sign"><i class="fas fa-arrow-circle-right"></i></span>
