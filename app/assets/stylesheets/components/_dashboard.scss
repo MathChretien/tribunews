@@ -136,17 +136,26 @@
 
 
 
-
-
 .member-container{
-  background-color:red;
-  display:inline-block;
+  display:inline-flex;
+  border: 1px solid black;
+  width:100%;
 
 }
-.member-status{
-  // TO DO
+
+.avatar-dashboard{
+  padding: 8px 8px 0px 0px;
 }
+
+.member-status{
+  background-color:red;
+  border-radius:50px;
+  border: 1px solid black;
+  width:10px;
+  height:10px;
+}
+
 .member-info{
-  display:flex;
+  padding: 10px 0px 0px 8px;
   font-size:25px;
 }

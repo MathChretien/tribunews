@@ -3,6 +3,7 @@ class TribesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
