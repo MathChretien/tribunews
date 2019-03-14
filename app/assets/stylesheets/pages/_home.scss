@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+.head-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+}
 .banner {
   flex-grow: 1;
   min-height: 100vh;
@@ -11,7 +16,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 60px;
   font-weight: bold;
 }
 
@@ -21,21 +26,91 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.head-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 0;
-  ;
-}
-.btn-success {
+.btn-success2 {
+  @extend .btn-success;
   background-color: $tribu-green;
   border-color: $tribu-green;
+  outline: none;
+  border-radius: 20px;
 }
-.btn-success:hover {
+.btn-success2:hover {
   background-color: $tribu-green2;
   border-color: $tribu-green2;
   text-decoration: none;
+  outline: none;
 }
-.btn-success:active {
-  border-color: none;
+.btn-success2:focus {
+  box-shadow: none !important;
+  border-color: none !important;;
+
+ }
+.btn-success2:active {
+  box-shadow: none !important;
+  background-color: $tribu-green2 !important;
+  border-color: $tribu-green2;
+  border-color: transparent !important;;
+}
+.btn-light {
+  vertical-align: center;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 35px;
+}
+.container {
+  text-align: center;
+}
+.banner2 {
+  display: flex;
+  background-color: white;
+  text-align: center;
+  padding-top: 20px;
+  flex-direction: column;
+}
+.banner2 h3 {
+  margin: 0;
+  color: $tribu-green;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 36px;
+
+}
+.banner2 p {
+  font-size: 14px;
+  color: black;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding-top: 20px;
+  padding-right: 15%;
+  padding-left: 15%;
+}
+.image {
+  max-width: 70%;
+  margin: auto;
+}
+.banner3  {
+  display: grid;
+  background: linear-gradient(rgba(0, 185, 160, 1),rgba(250, 225, 125, 1));
+  text-align: center;
+  padding-top: 20px;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10% 40% 40% 10%;
+}
+.banner3 h3 {
+
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 36px;
+}
+.howto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  text-align: center;
+  flex-direction: column;
+}
+.header-banner3 {
+  grid-column: 1 / span 3;
+  text-align: center;
 }
