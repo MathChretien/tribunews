@@ -12,7 +12,7 @@ $font-size-base: 1rem;
 // Colors
 $gray-base:       $gray;
 $brand-primary:   $blue;
-$brand-success:   $green;
+$brand-success:   $tribu-green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
@@ -23,3 +23,9 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+$btn-success-color: white;
+$btn-success-bg: $tribu-green2;
+$btn-success-border: $tribu-green;
+$label-success-bg: $tribu-green;
+
+
