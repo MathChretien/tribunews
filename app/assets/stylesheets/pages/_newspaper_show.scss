@@ -1,14 +1,20 @@
 .wrapper {
   background-color: #999;
-  height:91vh;
+  height: calc(100vh - 70px);
   overflow:hidden;
   display:flex;
   color: white; /* temp */
+  h3 {
+    font-size:20px;
+  }
+}
+.wrapper.fullscreen {
+  height: 100vh;
 }
 
 
 .library-pane {
-  flex: 0 0 30%;
+  flex-grow:1;
   background: #666;  /* fallback for old browsers */
   background: linear-gradient(to right, #666, #666 20%, #999);
 
@@ -16,7 +22,7 @@
 }
 
 .middle-pane {
-  flex: 1 1 auto;
+  flex: 0 0 700px;
   /*border: 1px solid green;*/
 }
 
@@ -24,7 +30,7 @@
   width: 20%;
   display:hidden;
   background-color: rgba(200,200,200,0.3);
-  flex: 0 0 150px;
+  flex: 0 0 200px;
   /*border: 1px solid green;*/
 }
 
@@ -32,7 +38,7 @@
   display:none;
 }
 
-.library-header, .middle-header {
+.library-header, .middle-header, .layout-header {
   padding: 6px 2px 2px 2px;
   background: #333;
   height: 40px;
@@ -42,7 +48,7 @@
 }
 
 
-#nice_upload_button {
+.nice_button {
   padding: 3px 30px;
   display: flex;
   justify-content: center;
@@ -55,15 +61,26 @@
     cursor: pointer;
     // cursor: url(asset_path('polaroidpointer')), auto !important;
   }
-
 }
-.library-byheader, .middle-byheader {
+
+.nice_button#btn_fullscreen{
+  padding:2px;
+  font-size:29px;
+}
+
+.library-byheader, .middle-byheader, .layout-byheader {
   background: #555;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.middle-byheader {
+  display:flex;
+  justify-content:flex-start;
+}
+
 .middle-content {
   display:flex;
   height:100%;

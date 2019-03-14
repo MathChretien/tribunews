@@ -16,9 +16,9 @@
     <div class="head-container">
       <%= render 'share/navbar' %>
       <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= render 'share/footer' %>
+      <p class="notice <%= 'hidden' unless notice %>"><%= notice %></p>
+      <p class="alert <%= 'hidden' unless alert %>"><%= alert %></p>
+
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
     </div>
