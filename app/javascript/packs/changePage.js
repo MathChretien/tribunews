@@ -1,26 +1,53 @@
 const changePageInit = () => {
   let page = document.querySelector(".num");
-  let title_page = document.querySelector("#num-change-page");
+  let titlePage = document.querySelector("#num-change-page");
   console.log(page);
 
   const changeButtonBack = document.getElementById("back-button");
-  if (changeButtonBack) changeButtonBack.addEventListener('click', (event) => {
-    page.html('<%= j @newspaper.pages[i][:number]%>');
-
-    console.log('yeah Back');
+  if (changeButtonBack) {
+    changeButtonBack.addEventListener('click', (event) => {
+      const beforePage = parseInt(page.innerHTML,10) -1 ;
+      checkVisibility(beforePage);
+      page.innerHTML = beforePage;
       console.log(page);
+       titlePage.innerHTML = `Page n°${beforePage}`;
+    });
+    console.log(page);
 
-  });
+  };
 
   const changeButtonForward = document.getElementById("forward-button");
-  if (changeButtonForward) changeButtonForward.addEventListener('click', (event) => {
-    page.innerHTML = parseInt(page.innerHTML,10) + 1;
-    title_page.innerHTML = "Page n° <%= @newspaper.pages[i][:number]%>";
-    console.log('yeah Forward');
-     console.log(page);
+  let pageTest = parseInt(page.innerHTML,10);
 
-  });
+
+  if (changeButtonForward) {
+    changeButtonForward.addEventListener('click', (event) => {
+      const nextPage = parseInt(page.innerHTML,10) + 1;
+      checkVisibility(nextPage);
+      page.innerHTML = nextPage;
       console.log(page);
+       titlePage.innerHTML = `Page n°${nextPage}`;
+    });
+    console.log(page);
+  }
+
+  function checkVisibility(currentPage) {
+    if (currentPage < 12) {
+    changeButtonForward.style.visibility = "hidden";
+    changeButtonBack.style.visibility = "visible";
+    }
+    else {
+    changeButtonForward.style.visibility = "visible";
+    };
+
+    if (currentPage === 1) {
+    changeButtonBack.style.visibility = "hidden";
+    changeButtonForward.style.visibility = "visible";
+      }
+        else {
+    changeButtonBack.style.visibility = "visible";
+      }
+  }
 
 };
 
