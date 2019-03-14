@@ -26,6 +26,7 @@
             Invite your Tribe
           </h4>
 
+          <%= f.hidden_field :tribe_id, value: current_user.tribe.id %>
           <div class="form-group">
             <%= f.label :email %>
             <%= f.email_field :email, placeholder: "email", as: :email,
