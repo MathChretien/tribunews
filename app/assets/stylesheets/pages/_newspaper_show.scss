@@ -1,30 +1,35 @@
 .wrapper {
   background-color: #999;
-  height:91vh;
-  overflow:hidden;
+  height: calc(100vh);
+  // overflow:hidden;
   display:flex;
   color: white; /* temp */
+  h3 {
+    font-size:20px;
+  }
+}
+.wrapper.fullscreen {
+  height: 100vh;
 }
 
-
 .library-pane {
-  flex: 0 0 30%;
+  flex-grow:1;
   background: #666;  /* fallback for old browsers */
   background: linear-gradient(to right, #666, #666 20%, #999);
-
-
 }
 
 .middle-pane {
-  flex: 1 1 auto;
-  /*border: 1px solid green;*/
+  flex: 0 0 700px;
+  // display:flex;
+  // justify-content:center;
+  // align-items:center;
 }
 
 .layout-pane {
   width: 20%;
   display:hidden;
   background-color: rgba(200,200,200,0.3);
-  flex: 0 0 150px;
+  flex: 0 1 250px;
   /*border: 1px solid green;*/
 }
 
@@ -32,7 +37,7 @@
   display:none;
 }
 
-.library-header, .middle-header {
+.library-header, .middle-header, .layout-header {
   padding: 6px 2px 2px 2px;
   background: #333;
   height: 40px;
@@ -42,7 +47,7 @@
 }
 
 
-#nice_upload_button {
+.nice_button {
   padding: 3px 30px;
   display: flex;
   justify-content: center;
@@ -55,18 +60,33 @@
     cursor: pointer;
     // cursor: url(asset_path('polaroidpointer')), auto !important;
   }
-
 }
-.library-byheader, .middle-byheader {
+
+.nice_button#btn_fullscreen{
+  padding:2px;
+  font-size:29px;
+}
+
+.library-byheader, .middle-byheader, .layout-byheader {
   background: #555;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.middle-byheader {
+  display:flex;
+  justify-content:flex-start;
+}
+
+#pages_number {
+  flex: 1 0 auto;
+}
+
 .middle-content {
   display:flex;
-  height:100%;
+  // height:100%;
   padding:10px;
 }
 
@@ -85,8 +105,12 @@
 }
 
 .edit-pane {
-  /*display:flex;*/
   flex-grow:1;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .newspaper_show h3 {
@@ -112,13 +136,27 @@
 
 .page-edition {
   background-color: white;
-  width : 500px;
-  height: 775px;
+  width : 570px;
+  height: 860px;
   margin: 0 auto;
-  margin-top: 8px;
+  margin-top: 1px;
   color : black;
   text-align: center;
 }
-#back-button {
-    // visibility: hidden;
+
+#num-change-page {
+  color: white;
+}
+
+.pic li {
+  cursor: grab;
+}
+
+.pic li:active {
+  cursor: grabbing;
+}
+
+.pic li.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
 }
