@@ -41,6 +41,22 @@
   align-items: center;
 }
 
+
+#nice_upload_button {
+  padding: 3px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 185, 160, 0.05);
+  border-radius: 5px;
+  box-shadow: 6px 4px 10px -1px rgba(0,0,0,0.4);
+  &:hover {
+    // pointer-events: auto;
+    cursor: pointer;
+    // cursor: url(asset_path('polaroidpointer')), auto !important;
+  }
+
+}
 .library-byheader, .middle-byheader {
   background: #555;
   height: 40px;
@@ -103,7 +119,6 @@
   color : black;
   text-align: center;
 }
-
 #back-button {
     // visibility: hidden;
 }
