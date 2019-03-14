@@ -24,5 +24,4 @@ const fullscreenInit = () => {
   });
 };
 
-
 export {fullscreenInit};

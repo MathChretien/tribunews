@@ -6,18 +6,61 @@
   // border: solid 1px green;
 }
 
-.newspage-container .box > img {
-  height: 100%;  //TEMP FOR TESTING
-  width: 100%;   //TEMP FOR TESTING
+.box {
+  height:100%; //NODIG???
 }
 
- #layout_02 {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
- }
- #box_02_01, #box_02_02 {
+
+
+#layout_00 {
+  padding:0 0;
+  color:white;
+}
+
+#box_00_01 {
+    // height:700px; //overwrite .box
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    position:relative;
+
+    .tribe-name{
+      margin-top:400px;
+    }
+    .layout_00_foreground {
+
+    }
+    h1 {
+      font-family:"Raleway";
+      font-weight::200;
+    }
+    h2 {
+      font-family:"Open Sans";
+      font-weight:300;
+      font-size:24px;
+      margin:30px 0;
+    }
+    .month {
+      margin-top:200px;
+      font-weight:700;
+      font-size:20px;
+    }
+  }
+
+  #layout_00_logo {
+    position:absolute;
+    top: 20px;
+    right:20px;
+  }
+
+  #layout_02 {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #box_02_01, #box_02_02 {
   //temp
   width:500px;
   height:380px;

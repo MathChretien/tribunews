@@ -11,6 +11,8 @@ const dragAndDropInit = () => {
     group: "shared"
   });
 
+
+
   // el2.addEventListener("DOMSubtreeModified", event => {
   //   const photo = event.target.querySelector("[data-choosen='false']");
   //   photo.dataset.choosen = "true";
@@ -32,5 +34,4 @@ const dragAndDropInit = () => {
   //   });
   // };
 };
-
  export {dragAndDropInit};
