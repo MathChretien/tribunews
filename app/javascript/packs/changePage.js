@@ -4,6 +4,12 @@ const changePageInit = () => {
   console.log(page);
 
   const changeButtonBack = document.getElementById("back-button");
+  let pageTest = page.innerHTML;
+  console.log(pageTest);
+  if (pageTest === " 1 ") {
+     changeButtonBack.style.visibility = "hidden";
+  };
+
   if (changeButtonBack) {
     changeButtonBack.addEventListener('click', (event) => {
       const beforePage = parseInt(page.innerHTML,10) -1 ;
@@ -17,7 +23,6 @@ const changePageInit = () => {
   };
 
   const changeButtonForward = document.getElementById("forward-button");
-  let pageTest = parseInt(page.innerHTML,10);
   if (changeButtonForward) {
     changeButtonForward.addEventListener('click', (event) => {
       const nextPage = parseInt(page.innerHTML,10) + 1;
