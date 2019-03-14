@@ -56,6 +56,10 @@
   border-radius: 20px;
   margin-bottom: 35px;
 }
+.btn-container {
+  width: 200px;
+  margin:40px auto 0px auto;
+}
 .container {
   text-align: center;
 }
@@ -126,6 +130,10 @@
   text-align: center;
   flex-direction: column;
 }
+.text-block {
+  justify-content: flex-start;
+  padding-top: 50px;
+}
 .header-banner3 {
   grid-column: 1 / span 3;
   text-align: center;
@@ -142,9 +150,71 @@
   align-items: center;
   justify-content: center;
 }
-.grid-banner4 {
+.banner4 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 20% 40% 40%;
+  text-align: center;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 10% 25% 45% 20%;
   background-color: light-gray;
+  grid-column-gap: 0px;
+}
+.header-banner4 {
+  grid-column: 1 / span 3;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner4 h4 {
+  margin: 0;
+  color: white;
+  font-size: 26px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.price ul li {
+  list-style: none;
+  text-align: left;
+  padding: 6px;
+  border-radius: 6px;
+}
+.price ul {
+  width: 80%;
+  padding-left: 0;
+}
+.tester {
+  margin: 0 auto;
+  max-width: 300px;
+}
+.price {
+  justify-content: flex-start;
+  margin: 0 30px;
+  box-shadow: 2px 2px 2px rgba(10,10,10,0.1);
+
+}
+.banner-flex {
+  display: flex;
+  justify-content: center;
+}
+.price-title {
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+}
+.price-off {
+  padding: 6px;
+
+}
+.price-box-flex {
+  display: flex;
+  flex-direction: rows;
+  justify-content: flex-end;
+  align-items: center;
 }
