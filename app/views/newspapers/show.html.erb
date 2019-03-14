@@ -27,7 +27,13 @@
       <h3>edit your pages</h3>
     </div>
     <div class="middle-byheader">
+
       <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i></div>
+
+      <div class="btn btn-lg">
+          <span class="num" style= "display: none"> <%= i = 1  %> </span>
+          <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
+        </div>
     </div>
     <div class="middle-content">
       <div class ="page-back">
@@ -35,8 +41,7 @@
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-          <span class="num" style= "display: none"> <%= i = 1  %> </span>
-        <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
+        <%= render "pages/page_layouts/layout_02" %>
         </div>
 
       </div>
