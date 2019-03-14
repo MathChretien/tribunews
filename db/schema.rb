@@ -1,4 +1,4 @@
-z# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -58,7 +58,9 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
     t.string "address"
     t.string "description"
     t.date "subscribed_on"
+    t.bigint "user_id"
     t.string "photo"
+    t.index ["user_id"], name: "index_tribes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +71,8 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstName"
+    t.string "lastName"
     t.string "first_name"
     t.string "last_name"
     t.bigint "tribe_id"
@@ -95,5 +99,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
   add_foreign_key "pages", "newspapers"
   add_foreign_key "pictures", "boxes"
   add_foreign_key "pictures", "newspapers"
+  add_foreign_key "tribes", "users"
   add_foreign_key "users", "tribes"
 end
