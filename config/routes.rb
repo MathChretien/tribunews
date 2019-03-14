@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :tribes
   resources :pictures
-  devise_for :users, controllers: {invitations: "invitations"}
+  devise_for :users, controllers: {registrations: "registrations"}
   resources :users, only: [:edit, :show, :update]
   root to: 'tribes#index'
 
