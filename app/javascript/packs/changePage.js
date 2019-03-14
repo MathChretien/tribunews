@@ -18,8 +18,6 @@ const changePageInit = () => {
 
   const changeButtonForward = document.getElementById("forward-button");
   let pageTest = parseInt(page.innerHTML,10);
-
-
   if (changeButtonForward) {
     changeButtonForward.addEventListener('click', (event) => {
       const nextPage = parseInt(page.innerHTML,10) + 1;
@@ -33,11 +31,11 @@ const changePageInit = () => {
 
   function checkVisibility(currentPage) {
     if (currentPage < 12) {
-    changeButtonForward.style.visibility = "hidden";
+    changeButtonForward.style.visibility = "visible";
     changeButtonBack.style.visibility = "visible";
     }
     else {
-    changeButtonForward.style.visibility = "visible";
+    changeButtonForward.style.visibility = "hidden";
     };
 
     if (currentPage === 1) {
