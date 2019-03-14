@@ -59,6 +59,12 @@
 .container {
   text-align: center;
 }
+.btn-banner {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px !important;
+}
 .banner2 {
   display: flex;
   background-color: white;
@@ -90,27 +96,55 @@
   display: grid;
   background: linear-gradient(rgba(0, 185, 160, 1),rgba(250, 225, 125, 1));
   text-align: center;
-  padding-top: 20px;
   flex-direction: column;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10% 40% 40% 10%;
 }
 .banner3 h3 {
-
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 36px;
 }
+.banner3 h4 {
+  margin: 0;
+  color: white;
+  font-size: 26px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.banner3 p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 .howto {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 200px;
   text-align: center;
   flex-direction: column;
 }
 .header-banner3 {
   grid-column: 1 / span 3;
   text-align: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-banner3 {
+  grid-column: 1 / span 3;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-banner4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 40% 40%;
+  background-color: light-gray;
 }
