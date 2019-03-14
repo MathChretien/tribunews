@@ -133,20 +133,49 @@
 }
 
 
-
-
-
+// HERE IS CSS FOR MEMBER CARDS
 
 
 .member-container{
-  background-color:red;
-  display:inline-block;
+  display:inline-flex;
+  width:100%;
 
 }
-.member-status{
-  // TO DO
+
+.avatar-dashboard{
+  position: relative;
+  padding: 8px 8px 0px 0px;
 }
+
+.member-status{
+  position: relative;
+  left: 29px;
+  top: 10px;
+  background-color:red;
+  border-radius:50px;
+
+  width:10px;
+  height:10px;
+}
+
 .member-info{
-  display:flex;
+  padding: 10px 0px 0px 8px;
   font-size:25px;
+}
+
+// HERE IS CSS FOR MEMBER ACTION IN DISPLAY list
+
+.action-container{
+
+}
+
+.invite {
+  display:inline-block;
+  border-radius: 50px;
+  margin: 0px 0px 0px 12px;
+}
+
+.search{
+  display:inline-block;
+
 }

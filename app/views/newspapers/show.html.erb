@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <div class="middle-pane">
+   <div class="middle-pane">
     <div class ="middle-header">
       <h2>Edit your pages</h2>
     </div>
@@ -30,15 +30,21 @@
     </div>
     <div class="middle-content">
       <div class ="page-back">
-        <span class="arrow-sign"><i class="fas fa-arrow-circle-left"></i></span>
+        <span class="arrow-sign" id = "back-button"><i class="fas fa-arrow-circle-left"></i></span>
       </div>
       <div class="edit-pane">
+        <div class="page-edition">
+          <span class="num" style= "display: none"> <%= i = 0  %> </span>
+        <h3 id = "num-change-page"> Page n° <%= @newspaper.pages[i][:number]%></h3>
+        </div>
+
       </div>
       <div class="page-forward">
-        <span class="arrow-sign"><i class="fas fa-arrow-circle-right"></i></span>
+        <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
       </div>
     </div>
   </div>
+
   <div class="layout-pane hidden ">
     layout
   </div>
