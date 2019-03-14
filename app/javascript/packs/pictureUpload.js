@@ -5,7 +5,6 @@ const pictureUploadInit = () => {
     const form = event.currentTarget.parentElement.parentElement;
     console.log(form);
     form.submit();
-    console.log('yeah');
   });
 };
 

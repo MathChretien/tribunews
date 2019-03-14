@@ -8,11 +8,11 @@
 
 
 .library-pane {
-  background-color: #666;
-  /*width: 30%;*/
   flex: 0 0 30%;
-/*  border: 1px solid green;
-*/
+  background: #666;  /* fallback for old browsers */
+  background: linear-gradient(to right, #666, #666 20%, #999);
+
+
 }
 
 .middle-pane {
@@ -77,6 +77,23 @@
   font-size:22px;
 }
 
+.pix-container {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  padding:8px;
+  align-items: flex-start;
+}
+
+.pic {
+  // flex-grow: 1;
+  display:flex;
+  justify-content:center;
+  margin: 8px;
+  margin-right: 12px;
+  box-shadow: 10px 18px 44px -11px rgba(0,0,0,0.72);
+}
+
 .page-edition {
   background-color: white;
   width : 500px;
@@ -86,3 +103,4 @@
   color : black;
   text-align: center;
 }
+
