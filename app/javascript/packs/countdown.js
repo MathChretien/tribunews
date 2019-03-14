@@ -1,4 +1,4 @@
-const myfunct = () => {
+const countdownInit = () => {
   if(document.getElementById("demo")){
 // Set the date we're counting down to
 let countDownDate = new Date("March 31, 2019 23:59:59").getTime();
@@ -30,4 +30,4 @@ const x = setInterval(function() {
   };
 };
 
-export { myfunct }
+export { countdownInit }
