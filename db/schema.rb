@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_135745) do
-
+ActiveRecord::Schema.define(version: 2019_03_13_141614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_135745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "layout"
+    t.string "number"
     t.index ["newspaper_id"], name: "index_pages_on_newspaper_id"
   end
 
