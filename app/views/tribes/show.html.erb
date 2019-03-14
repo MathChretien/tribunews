@@ -36,7 +36,7 @@
 
       <div class="member-list">
         <h2 class= "title-dashboard"> Members of your Tribe </h2>
-        <%= render  'share/member-action' %>
+        <%= render  'share/member-action', user: @user %>
 
         <% current_user.tribe.users.each do |user| %>
        <%= render  'share/member-tag', user: user %>
