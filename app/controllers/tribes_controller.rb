@@ -1,9 +1,9 @@
 class TribesController < ApplicationController
   def index
-
   end
 
   def show
+    @new_user = User.new
   end
 
   def new
@@ -13,6 +13,7 @@ class TribesController < ApplicationController
   end
 
   def edit
+    raise
   end
 
   def update
