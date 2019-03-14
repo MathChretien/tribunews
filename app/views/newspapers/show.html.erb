@@ -1,5 +1,5 @@
 <div class="main-body newspaper-show">
-  <div class="wrapper fullscreen">
+  <div class="wrapper">
     <div class="library-pane">
       <div class ="library-header">
         <h3><%= @tribe.name%>'pictures</h3>
@@ -22,18 +22,17 @@
       </div>
     </div>
   </div>
-   <div class="middle-pane">
+  <div class="middle-pane">
     <div class ="middle-header">
       <h3>edit your pages</h3>
     </div>
     <div class="middle-byheader">
-
-      <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i></div>
-
-      <div class="btn btn-lg">
-          <span class="num" style= "display: none"> <%= i = 1  %> </span>
-          <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
-        </div>
+      <div class="btn btn-lg" id="pages_number">
+        <span class="num" style= "display: none"> <%= i = 1  %> </span>
+        <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
+      </div>
+      <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i>
+      </div>
     </div>
     <div class="middle-content">
       <div class ="page-back">
@@ -41,7 +40,7 @@
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-        <%= render "pages/page_layouts/layout_02" %>
+          <%= render "pages/page_layouts/layout_02" %>
         </div>
 
       </div>
