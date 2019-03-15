@@ -1,15 +1,15 @@
 import Sortable from "sortablejs";
 const dragAndDropInit = () => {
 
-  var el1 = document.querySelector(".pix-container");
-  var sortable = Sortable.create(el1, {
-    group: "shared"
-  });
+  // var el1 = document.querySelector(".pix-container");
+  // var sortable = Sortable.create(el1, {
+  //   group: "shared"
+  // });
 
-  var el2 = document.querySelector(".layout");
-  var sortable = Sortable.create(el2, {
-    group: "shared"
-  });
+  // var el2 = document.querySelector(".layout");
+  // var sortable = Sortable.create(el2, {
+  //   group: "shared"
+  // });
 
 
 
