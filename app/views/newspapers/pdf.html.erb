@@ -1,3 +1,56 @@
+<div class="main-body newspaper-show">
+  <div class="wrapper">
+    <div class="library-pane">
+      <div class ="library-header">
+        <h3><%= @tribe.name%>'pictures</h3>
+      </div>
+      <div class="library-byheader">
+       <%= simple_form_for @new_picture do |f| %>
+       <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
+       <%= f.input :photo_cache, as: :hidden %>
+       <% end %>
+       <div id="nice_upload_button" class="nice_button">add some new family gems</div>
+     </div>
+     <div class = "library-content">
+      <div class="pix-container">
+        <% @newspaper.pictures.each do |pic| %>
+        <div class="pic">
+          <%= cl_image_tag(pic.photo,
+          width:150, height:150, crop: :fill) %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="middle-pane">
+    <div class ="middle-header">
+      <h3>edit your pages</h3>
+    </div>
+    <div class="middle-byheader">
+      <div class="btn btn-lg" id="pages_number">
+        <span class="num" style= "display: none"> <%= i = 1  %> </span>
+        <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
+      </div>
+      <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i>
+      </div>
+    </div>
+    <div class="middle-content">
+      <div class ="page-back">
+        <span class="arrow-sign" id = "back-button"><i class="fas fa-arrow-circle-left" ></i></span>
+      </div>
+      <div class="edit-pane">
+        <div class="page-edition">
+          <% @newspaper.pages.each do |page| %>
+            <% page.id %>
+          <% end %>
+        </div>
+
+      </div>
+      <div class="page-forward">
+        <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
+      </div>
+    </div>
+  </div>
 
   <div class="layout-pane">
     <div class ="layout-header">
@@ -9,9 +62,9 @@
 
     </div>
   </div>
-
+</div>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-
+</div>
 
 <script>
 </script>
