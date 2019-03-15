@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'pages/update'
   get 'newspapers/index'
   get 'newspapers/show'
-
+  post 'box_photo', to: "newspapers#box_photo"
   resources :boxes
   resources :tribes
   resources :pictures
