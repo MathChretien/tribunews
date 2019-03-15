@@ -14,6 +14,10 @@ gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
 
+gem 'jquery-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 gem 'bootstrap', '~> 4.0'
 gem 'mini_magick'
 gem 'fog-aws'
