@@ -11,7 +11,12 @@ class InvitationsController < Devise::InvitationsController
   end
 
   private
+
+  def update_resource_params
+    params.require(:user).permit(:email, :invitation_token, :password, :photo, :password_confirmation, :first_name, :last_name, :tribe_id )
+  end
+
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation,:first_name, :last_name, :tribe_id )
+    params.require(:user).permit(:email, :password, :photo, :password_confirmation, :first_name, :last_name, :tribe_id )
   end
 end

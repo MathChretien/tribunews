@@ -4,7 +4,7 @@ const pictureUploadInit = () => {
   const uglyUpload = document.getElementById('ugly_photo_upload');
   if (uglyUpload) uglyUpload.addEventListener('change', (event) => {
     const form = event.currentTarget.parentElement.parentElement;
-    console.log(form);
+    // console.log(form);
     form.submit();
   });
   if (niceUpload) niceUpload.addEventListener('click', () => {

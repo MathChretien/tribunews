@@ -1,37 +1,56 @@
 import Sortable from "sortablejs";
 const dragAndDropInit = () => {
 
-  var el1 = document.querySelector(".pix-container");
-  var sortable = Sortable.create(el1, {
-    group: "shared"
+  var libraryBox = document.querySelector("#library");
+  new Sortable(libraryBox, {
+    group: "shared",
+    onAdd: function (evt) {
+      const photo = event.target.querySelector("[data-chosen='true']");
+      if (!photo) return
+      photo.dataset.chosen = "false";
+    },
   });
+  
+  var boxes = document.querySelectorAll("[data-boxes='true']");
 
-  var el2 = document.querySelector(".layout");
-  var sortable = Sortable.create(el2, {
-    group: "shared"
-  });
+  (boxes || []).forEach(box => {
+    new Sortable(box, {
+      group: "shared",
+      onAdd: function (evt) {
+        addPictureToBox(box)
+      },
+    });
+  })
 
+  const addPictureToBox = (box) => {
+    const newPhoto = box.querySelector("[data-chosen='false']");
+    const oldPhoto = box.querySelector("[data-chosen='true']");
+    placeBackInLibrary(oldPhoto)
+    if (!newPhoto) return
+      console.log( newPhoto.dataset)
+    console.log( box.dataset)
+    newPhoto.dataset.chosen = "true";
+    makeApiCall({
+      picture_id: newPhoto.dataset.id,
+      box_id: box.dataset.boxNumber
+    });
+  }
 
-
-  // el2.addEventListener("DOMSubtreeModified", event => {
-  //   const photo = event.target.querySelector("[data-choosen='false']");
-  //   photo.dataset.choosen = "true";
-  //   makeApiCall({
-  //     photoId: photo.dataset.photoId,
-  //     boxNumber: event.target.dataset.boxNumber
-  //   });
-  // });
-
-  // el1.addEventListener("DOMSubtreeModified", event => {
-  //   const photo = event.target.querySelector("[data-choosen='true']");
-  //   photo.dataset.choosen = "false";
-  // });
-
-  // const makeApiCall = params => {
-  //   fetch("https://en2gr1lgcfj1p.x.pipedream.net/", {
-  //     method: "post",
-  //     body: JSON.stringify(params)
-  //   });
-  // };
+  const makeApiCall = params => {
+    console.log(params)
+    fetch("/box_photo", {
+      method: "post",
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(params)
+    });
+  };
+  const placeBackInLibrary = photo => {
+    if (!photo) return
+    libraryBox.appendChild(photo);
+  }
 };
+
  export {dragAndDropInit};
