@@ -12,9 +12,9 @@
        <div id="nice_upload_button" class="nice_button">add some new family gems</div>
      </div>
      <div class = "library-content">
-      <div class="pix-container">
+      <div class="pix-container" id="library">
         <% @newspaper.pictures.each do |pic| %>
-        <div class="pic">
+        <div class="pic" data-chosen="false" data-id="<%= pic.id %>" >
           <%= cl_image_tag(pic.photo,
           width:150, height:150, crop: :fill) %>
         </div>

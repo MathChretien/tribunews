@@ -7,7 +7,7 @@
     <div class="action-sidebar">
       <div class="button-sidebar">
         <li> Tribe Informations (Link to) </li>
-        <li> <%= link_to 'My Account', user_registration_path %>  </li>
+        <li> <%= link_to 'My Account', edit_user_registration_path %>  </li>
         <li> Subscription (Link to)</li>
       </div>
     </div>
@@ -15,7 +15,7 @@
   <div class="main-content-dashboard">
 
     <div class="action-edit">
-      <h2 class= "title-dashboard-button"> Edit your Family Newspaper</h2>
+      <h2 class= "title-dashboard"> <%=  link_to 'Edit your Family Newspaper' , newspapers_show_path  %></h2>
       <%= image_tag("TRIBU_JOURNAL_PRESSE_post.jpg", alt: "newspaper", height: 100, width: 150) %>
     </div>
 

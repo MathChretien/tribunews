@@ -1,5 +1,6 @@
 class TribesController < ApplicationController
   def index
+    redirect_to tribe_path(current_user.tribe) if current_user
   end
 
   def show
