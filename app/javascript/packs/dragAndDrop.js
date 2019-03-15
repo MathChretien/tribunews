@@ -10,7 +10,7 @@ const dragAndDropInit = () => {
       photo.dataset.chosen = "false";
     },
   });
-
+  
   var boxes = document.querySelectorAll("[data-boxes='true']");
 
   (boxes || []).forEach(box => {

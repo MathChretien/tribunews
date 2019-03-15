@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root to: 'tribes#index'
-  get 'boxes/index'
-  get 'boxes/show'
-  get 'boxes/edit'
-  get 'boxes/update'
+
   get 'pages/index'
   get 'pages/show'
   get 'pages/edit'
@@ -11,6 +8,7 @@ Rails.application.routes.draw do
   get 'newspapers/index'
   get 'newspapers/show'
   post 'box_photo', to: "newspapers#box_photo"
+  resources :boxes
   resources :tribes
   resources :pictures
   devise_for :users, controllers: { invitations: 'invitations' }
