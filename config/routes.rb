@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'pages/update'
   get 'newspapers/index'
   get 'newspapers/show'
-
+  get 'newspapers/pdf'
   resources :tribes
   resources :pictures
   devise_for :users, controllers: { invitations: 'invitations' }
