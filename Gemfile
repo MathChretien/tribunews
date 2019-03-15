@@ -4,6 +4,9 @@ ruby '2.5.3'
 gem 'devise'
 #adding devise email support to project
 gem 'devise_invitable', '~> 2.0.0'
+#gem for sending emails
+gem "letter_opener", group: :development
+
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'

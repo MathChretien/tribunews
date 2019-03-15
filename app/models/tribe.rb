@@ -1,7 +1,7 @@
 class Tribe < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :users
-  has_many :newspapers
+  has_many :newspapers, dependent: :destroy
 
   after_create do
     return if self.newspapers.any?
