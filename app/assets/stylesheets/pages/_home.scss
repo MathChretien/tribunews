@@ -151,10 +151,6 @@
   justify-content: center;
 }
 .banner4 {
-  display: grid;
-  text-align: center;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 10% 25% 45% 20%;
   background-color: light-gray;
   grid-column-gap: 0px;
 }
@@ -166,10 +162,10 @@
   align-items: center;
   justify-content: center;
 }
-.banner4 h4 {
+.banner4 h3 {
   margin: 0;
-  color: white;
-  font-size: 26px;
+  color: gray;
+  font-size: 36px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .price {
@@ -207,6 +203,12 @@
   padding: 20px;
   border-radius: 5px 5px 0px 0px;
   width: 100%;
+}
+ h4 {
+  margin: 0;
+  color: white;
+  font-size: 26px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .price-off {
   padding: 6px;
