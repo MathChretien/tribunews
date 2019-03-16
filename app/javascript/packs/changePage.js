@@ -6,7 +6,7 @@ const changePageInit = () => {
   const changeButtonBack = document.getElementById("back-button");
 
   if (page) {
-  let pageTest = page.innerHTML;
+    let pageTest = page.innerHTML;
     console.log(pageTest);
     if (pageTest === " 1 ") {
      changeButtonBack.style.visibility = "hidden";
@@ -20,6 +20,16 @@ const changePageInit = () => {
     page.innerHTML = beforePage;
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
+    // BOB THIS IS WHERE SOME MAGIC SHOULD HAPPEN :=)
+    // MAKE IT SHINE!
+    // fetch("/newspapers/show/?page="+beforePage, {
+    //   method: "get",
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   }
+    // });
+
   });
   console.log(page);
 
@@ -33,9 +43,18 @@ if (changeButtonForward) {
     page.innerHTML = nextPage;
     console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
+     // BOB THIS IS WHERE SOME MAGIC SHOULD HAPPEN :=)
+    // MAKE IT SHINE!
+    // fetch("/newspapers/show/?page="+nextPage, {
+    //   method: "get",
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   }
+    // });
   });
   console.log(page);
-}
+};
 
 function checkVisibility(currentPage) {
   if (currentPage < 12) {

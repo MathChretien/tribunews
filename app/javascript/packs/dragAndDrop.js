@@ -10,7 +10,7 @@ const dragAndDropInit = () => {
       photo.dataset.chosen = "false";
     },
   });
-  
+
   var boxes = document.querySelectorAll("[data-boxes='true']");
 
   (boxes || []).forEach(box => {
@@ -31,9 +31,9 @@ const dragAndDropInit = () => {
     console.log( box.dataset)
     newPhoto.dataset.chosen = "true";
     makeApiCall({
-      picture_id: newPhoto.dataset.id,
-      box_id: box.dataset.boxNumber
-    });
+       picture_id: newPhoto.dataset.id,
+       box_id: box.dataset.boxNumber
+     });
   }
 
   const makeApiCall = params => {
