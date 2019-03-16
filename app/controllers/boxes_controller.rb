@@ -13,7 +13,8 @@ class BoxesController < ApplicationController
     @box = Box.find(params[:id])
     # TODO Test if category text stays text and pic stays pic
     @box.update!(update_params)
-    render "newspapers/show"  # TODO AAARG where to go!? think this has to become newspaper_show, but not implemented yet
+    redirect_back fallback_location: { action: "show", id: 5 }
+    # TODO AAARG where to go!? think this has to become newspaper_show, but not implemented yet
   end
 
   private

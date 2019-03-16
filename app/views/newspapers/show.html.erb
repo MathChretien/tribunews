@@ -42,7 +42,15 @@
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-          <%= render "pages/page_layouts/layout_02" %>
+          page id <%= @page.id %>
+          page layout: <%= @page.layout %>
+          pic_boxes: <%= @pic_boxes.size %>
+          text_boxes: <%= @text_boxes.size %>
+
+          <% @page.layout = "2" if @page.layout.nil? %>
+
+          <!-- default layout... maybe to remove if all works well -->
+          <%= render "pages/page_layouts/layout_0"+@page.layout %>
         </div>
 
       </div>
