@@ -13,12 +13,14 @@
      </div>
      <div class = "library-content">
       <div class="pix-container" id="library">
-        <% @newspaper.pictures.each do |pic| %>
-        <div class="pic" data-chosen="false" data-id="<%= pic.id %>" >
-          <%= cl_image_tag(pic.photo,
-          width:150, height:150, crop: :fill) %>
-        </div>
-        <% end %>
+          <% @newspaper.pictures.each do |pic| %>
+             <% if pic.box.nil? %>
+             <div class="pic" data-chosen="false" data-id="<%= pic.id %>" >
+               <%= cl_image_tag(pic.photo,
+                 width:150, height:150, crop: :fill) %>
+              </div>
+             <%end%>
+           <% end %>
       </div>
     </div>
   </div>
@@ -45,6 +47,7 @@
 
       </div>
       <div class="page-forward">
+        <!-- here i could work with a form that does a submit, via js changepage.js -->
         <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
       </div>
     </div>

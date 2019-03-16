@@ -4,15 +4,16 @@ const dragAndDropInit = () => {
   var libraryBox = document.querySelector("#library");
   new Sortable(libraryBox, {
     group: "shared",
-    onAdd: function (evt) {
-      const photo = event.target.querySelector("[data-chosen='true']");
+    onAdd: function (event) {
+      const photo = document.querySelector("[data-chosen='true']");
+      console.log(photo);
       if (!photo) return
       photo.dataset.chosen = "false";
+      placeBackInLibrary(photo);
     },
   });
-  
-  var boxes = document.querySelectorAll("[data-boxes='true']");
 
+  var boxes = document.querySelectorAll("[data-boxes='true']");
   (boxes || []).forEach(box => {
     new Sortable(box, {
       group: "shared",
@@ -26,14 +27,15 @@ const dragAndDropInit = () => {
     const newPhoto = box.querySelector("[data-chosen='false']");
     const oldPhoto = box.querySelector("[data-chosen='true']");
     placeBackInLibrary(oldPhoto)
+    console.log(oldPhoto)
     if (!newPhoto) return
-      console.log( newPhoto.dataset)
+      console.log(newPhoto.dataset)
     console.log( box.dataset)
     newPhoto.dataset.chosen = "true";
     makeApiCall({
-      picture_id: newPhoto.dataset.id,
-      box_id: box.dataset.boxNumber
-    });
+       picture_id: newPhoto.dataset.id,
+       box_id: box.dataset.boxNumber
+     });
   }
 
   const makeApiCall = params => {
@@ -50,6 +52,10 @@ const dragAndDropInit = () => {
   const placeBackInLibrary = photo => {
     if (!photo) return
     libraryBox.appendChild(photo);
+    makeApiCall({
+       picture_id: photo.dataset.id,
+       box_id: nil
+     });
   }
 };
 
