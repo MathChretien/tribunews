@@ -8,7 +8,7 @@ class NewspapersController < ApplicationController
   def show
     @new_picture = Picture.new
     @tribe = current_user.tribe
-    @newspaper = @tribe.newspapers.last
+    @newspaper = @tribe.newspapers.first # normally: last but we work with 1
     if params[:page_nr].nil?
       @page = @newspaper.pages.first
     else
@@ -16,6 +16,7 @@ class NewspapersController < ApplicationController
     end
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
+
 
     # respond_to  do |format|
     #   format.html
@@ -51,7 +52,7 @@ private
       if category == :pic && !b.picture.nil?
         res << b
 
-      elsif category == :text && !b.content_text.nil?
+      elsif category == :text && b.category == "text"
         res << b
       end
     end
