@@ -50,6 +50,7 @@ private
     page.boxes.each do |b|
       if category == :pic && !b.picture.nil?
         res << b
+
       elsif category == :text && !b.content_text.nil?
         res << b
       end

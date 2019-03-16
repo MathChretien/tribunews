@@ -29,7 +29,7 @@
   width: 20%;
   display:hidden;
   background-color: rgba(200,200,200,0.3);
-  flex: 0 1 250px;
+  flex: 0 1 200px;
   /*border: 1px solid green;*/
 }
 
@@ -164,4 +164,27 @@
 .photo-box {
   border: red 1px solid;
   height: 300px;
+}
+
+.layout-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+    text-align:right;
+    padding-left:30px;
+
+  .layout_icon {
+    margin: 20px;
+    height: 120px;
+    width: 80px;
+    opacity: .95;
+    filter: invert(80%);
+
+  }
+
+  .layout_active {
+    filter: none;
+  }
+
 }
