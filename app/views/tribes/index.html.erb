@@ -5,7 +5,7 @@
     <h1>that unites generations</h1>
     <div class="btn-banner">
       <div>
-        <a class="btn btn-light" href="tribes/show" style="font-size: 22px; width: 200px; margin-right: 50px;">Subscribe now</a>
+        <%= link_to "Subscribe now", new_user_session_path,  {style: "font-size: 22px; width: 200px; margin-right: 50px;", class: "btn btn-light"} %>
       </div>
       <div>
         <a class="btn btn-success2" href="newspapers/show" style="font-size: 22px; width: 200px; margin-left: 50px;">Test me</a>
@@ -21,7 +21,7 @@
   <img class="image" alt="mon image" src="https://res.cloudinary.com/df0udw5lo/image/upload/v1552561486/TRIBU_JOURNAL_PRESSE.jpg">
 
   <div>
-    <a class="btn btn-success2" href="tribes/show" style="font-size: 22px; width: 200px; margin-bottom: 35px;">Subscribe</a>
+    <%= link_to "Subscribe now", new_user_session_path, {style: "font-size: 22px; width: 200px; margin-bottom: 35px;", class: "btn btn-success2"} %>
   </div>
 </div>
 <div class="banner3" alt="how it's working" style="">
@@ -37,20 +37,20 @@
       </div>
 
     <div class="howto text-block" alt="block text 1">
-      <h4 style="text-align: center;"><strong>1.) Log in</strong></h4>
+      <h4 style="text-align: center;"><strong>1) Log in</strong></h4>
       <p>Create your family newspaper.</p>
     </div>
     <div class="howto text-block" alt="block text 2">
-      <h4 style="text-align: center;"><strong>2.) Invite your Tribufamily</strong></h4>
+      <h4 style="text-align: center;"><strong>2) Invite your Tribufamily</strong></h4>
       <p>Members of your Tribufamily add pictures to your account.</p>
     </div>
     <div class="howto text-block" alt="block text 3">
-      <h4 style="text-align: center;"><strong>3.) Edit the newspaper</strong></h4>
+      <h4 style="text-align: center;"><strong>3) Edit the newspaper</strong></h4>
       <p>Up to the last day of the month, you can delete, move, add pictures and messages.</p>
     </div>
 
   <div class="btn-banner3">
-    <a class="btn btn-light" href="tribes/show" style="font-size: 22px; width: 200px;">Subscribe</a>
+    <%= link_to "Subscribe now", new_user_session_path, {style: "font-size: 22px; width: 200px;", class: "btn btn-success2"}  %>
   </div>
 </div>
 
@@ -101,7 +101,7 @@
     </div>
   </div>
   <div class="btn-container">
-    <a class="btn btn-success2" href="tribes/show" style="font-size: 22px; width: 200px; margin-bottom: 35px; text-align: center;">Subscribe</a>
+    <%= link_to "Subscribe", new_user_session_path, {style: "font-size: 22px; width: 200px; margin-bottom: 35px; text-align: center;", class: "btn btn-success2"} %>
   </div>
   </div>
 
