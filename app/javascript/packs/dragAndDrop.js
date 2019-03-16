@@ -26,11 +26,10 @@ const dragAndDropInit = () => {
   const addPictureToBox = (box) => {
     const newPhoto = box.querySelector("[data-chosen='false']");
     const oldPhoto = box.querySelector("[data-chosen='true']");
-    placeBackInLibrary(oldPhoto)
-    console.log(oldPhoto)
-    if (!newPhoto) return
-      console.log(newPhoto.dataset)
-    console.log( box.dataset)
+    placeBackInLibrary(oldPhoto);
+    if (!newPhoto) return console.log( newPhoto.dataset);
+    console.log( box.dataset);
+
     newPhoto.dataset.chosen = "true";
     makeApiCall({
        picture_id: newPhoto.dataset.id,
