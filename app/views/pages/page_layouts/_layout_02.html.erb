@@ -1,13 +1,12 @@
 <div class="layout" id="layout_02">
-  <div class="photo-box pic" id="box_02_01" data-boxes="true" data-box-number="1">
+  <div class="photo-box pic" id="box_02_01" data-chosen="true" data-boxes="true" data-box-number="1">
     <% if @pic_boxes[0].nil? %>
      NO PIC
     <% else %>
     <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_02_01") %>
     <%end%>
   </div>
-
-  <div class="photo-box pic" id="box_02_01" data-boxes="true" data-box-number="2">
+  <div class="photo-box pic" id="box_02_01" data-chosen="true" data-boxes="true" data-box-number="2">
    <% if @pic_boxes[1].nil? %>
    NO PIC
    <% else %>
