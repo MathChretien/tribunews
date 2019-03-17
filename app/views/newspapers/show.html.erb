@@ -9,7 +9,7 @@
        <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
        <%= f.input :photo_cache, as: :hidden %>
        <% end %>
-       <div id="nice_upload_button" class="nice_button">add some new family gems</div>
+       <div id="nice_upload_button" class="nice_button">add new pictures</div>
      </div>
      <div class = "library-content">
       <div class="pix-container" id="library">
@@ -42,14 +42,12 @@
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-          page id <%= @page.id %>
-          page layout: <%= @page.layout %>
-          pic_boxes: <%= @pic_boxes.size %>
-          text_boxes: <%= @text_boxes.size %>
+          <!--  -->
+             <!-- default layout... maybe to remove if all works well -->
+          <% @page.layout = "2" %>
+           <!-- @page.layout = "2" if @page.layout.nil?  -->
 
-          <% @page.layout = "2" if @page.layout.nil? %>
 
-          <!-- default layout... maybe to remove if all works well -->
           <%= render "pages/page_layouts/layout_0"+@page.layout %>
         </div>
 
