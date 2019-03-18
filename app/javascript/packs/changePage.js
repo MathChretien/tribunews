@@ -1,7 +1,9 @@
+// import {getPageNr} from './changePage';
+
 const changePageInit = () => {
   let page = document.querySelector(".num");
   let titlePage = document.querySelector("#num-change-page");
-  console.log(page);
+  // console.log(page);
 
   const changeButtonBack = document.getElementById("back-button");
 
@@ -20,15 +22,6 @@ const changePageInit = () => {
     page.innerHTML = beforePage;
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
-    // BOB THIS IS WHERE SOME MAGIC SHOULD HAPPEN :=)
-    // MAKE IT SHINE!
-    // fetch("/newspapers/show/?page="+beforePage, {
-    //   method: "get",
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   }
-    // });
 
   });
   console.log(page);
@@ -43,15 +36,15 @@ if (changeButtonForward) {
     page.innerHTML = nextPage;
     console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
-     // BOB THIS IS WHERE SOME MAGIC SHOULD HAPPEN :=)
-    // MAKE IT SHINE!
-    // fetch("/newspapers/show/?page="+nextPage, {
-    //   method: "get",
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   }
-    // });
+
+
+    fetch("/pages/show/?page="+nextPage, {
+      method: "get",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
   });
   console.log(page);
 };
@@ -69,11 +62,15 @@ function checkVisibility(currentPage) {
     changeButtonBack.style.visibility = "hidden";
     changeButtonForward.style.visibility = "visible";
   }
-  else {
+  else
     changeButtonBack.style.visibility = "visible";
-  }
 }
-
 };
 
-export {changePageInit};
+function getPageNr() {
+  const pageElement = document.querySelector(".num");
+  if (pageElement) return parseInt(pageElement.innerHTML,10);
+  else return null;
+}
+
+export {changePageInit, getPageNr};
