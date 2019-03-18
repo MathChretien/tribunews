@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'newspapers/show'
   get 'newspapers/pdf'
   post 'box_photo', to: "newspapers#box_photo"
+  delete 'newspapers/:id', to: 'newspapers#destroy'
   resources :boxes
 
   resources :tribes

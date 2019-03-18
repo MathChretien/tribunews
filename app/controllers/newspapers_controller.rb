@@ -17,7 +17,6 @@ class NewspapersController < ApplicationController
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
 
-
     # respond_to  do |format|
     #   format.html
     #   format.pdf do
@@ -31,6 +30,14 @@ class NewspapersController < ApplicationController
     #           end
     #  end
   end
+
+  def destroy
+      tribe = current_user.tribe
+      newspaper = tribe.newspapers.last
+      @pic = newspaper.pictures.find(params[:id].to_i)
+      @pic.destroy
+      redirect_to newspapers_show_path
+    end
 
   def pdf
    @new_picture = Picture.new
