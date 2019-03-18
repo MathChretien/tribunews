@@ -1,18 +1,18 @@
 .dashboard {
 }
-
+.structure {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 300px auto 300px;
+}
 .sidebar {
   position: relative;
-  width : 27;
   height: 1000px;
   background-color: white;
 }
 .title-sidebar {
   display: flex;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width : 27%;
+
   height : 50px;
   background-image: linear-gradient(to right, $tribu-green, $tribu-yellow);
   justify-content: center;
@@ -22,10 +22,7 @@
 
 .action-sidebar {
   display: flex;
-  position: absolute;
-  top: 50px;
-  left: 0px;
-  width : 27%;
+
   height : 950px;
   background-color: white;
   justify-content: center;
@@ -46,25 +43,22 @@
 
 .main-content-dashboard {
   display: flex;
-  position: relative;
-  width: 73%;
+  flex-direction: column;
+  text-align: center;
   height: 1000px;
-  top: -1000px;
-  left: 27%;
+  align-items: center;
   background-color : #eeeeee;
   padding: 15px;
 }
 
 .action-edit {
   width : 500px;
-  height : 300px;
-  background-color : white;
+  height : 70px;
+  background-color : $tribu-green;
   margin: 10px;
-  position: relative;
-  right: -155px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: $tribu-green;
+  border-radius: 8px;
+  color: white;
+
 }
 
 .title-dashboard-button {
@@ -82,38 +76,39 @@
   background-color : white;
   border-color: $tribu-green;
   margin: 10px;
-  position: relative;
-  bottom: -323px;
-  right: 278px;
   border-style: solid;
   border-width: 1px;
-  border-color: $tribu-green;
   text-align: center;
 }
 
 .countdown-text {
   font-size: 20px;
-  padding: 20px;
-
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px;
+  background-color: white;
+  color: $tribu-green;
+  text-align: center;
+  text-decoration: underline;
+  border-radius: 6px;
+  margin-top: 21px;
+  text-align: center;
+  align-items: center;
 }
 
 .member-list {
-
-  width : 550px;
-  min-height: 400px;
-  background-color : white;
-  margin: 10px;
-  position: relative;
-  right: 120px;
-  border-style: solid;
-  border-width: 1px;
   border-color: $tribu-green;
+
+
 }
 
 .title-dashboard {
   color: $tribu-green;
   text-align: center;
   margin-top: 15px;
+  a {
+    color: white;
+  }
 }
 
 .counter {
@@ -131,7 +126,21 @@
   font-size: 60px;
   color: $tribu-green;
 }
-
+.add-button {
+  background-color: $tribu-green;
+  border: none !important;
+  &:hover {
+    background-color: $tribu-green2;
+  }
+  &:active {
+    background-color: $tribu-green !important;
+    border-style: none;
+    box-shadow: none !important;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
 
 // HERE IS CSS FOR MEMBER CARDS
 
