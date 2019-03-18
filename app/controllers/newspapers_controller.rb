@@ -41,6 +41,9 @@ class NewspapersController < ApplicationController
   def box_photo
     pic = Picture.find params[:picture_id]
     pic.update(box_id: params[:box_id])
+    box = Box.find params[:box_id]
+    box.update(category: params[:category])
+
   end
 
 
@@ -49,12 +52,13 @@ private
   def get_boxes(page, category)
     res = []
     page.boxes.each do |b|
-      if category == :pic && !b.picture.nil?
+      if b.category == "pic" && !b.picture.nil?
         res << b
 
-      elsif category == :text && b.category == "text"
+      elsif b.category == "text" && b.category == "text"
         res << b
       end
+      # raise
     end
     return res
 
