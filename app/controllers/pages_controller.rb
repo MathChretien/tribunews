@@ -14,4 +14,10 @@ class PagesController < ApplicationController
 
   def update
   end
+
+  def change_layout
+    page_layout = Page.find params[:page_id]
+    page_layout.update(layout: params[:layout])
+  end
+
 end

@@ -7,11 +7,12 @@ class Tribe < ApplicationRecord
     return if self.newspapers.any?
     newspaper = self.newspapers.create(published_on: Date.today.end_of_month)
     (1..12).each do |number|
-       var_page = newspaper.pages.create(number: number.to_s)
-      10.times do |box|
+      var_page = newspaper.pages.create(number: number.to_s)
+      9.times do |box|
         var_page.boxes.create
       end
-   end
+      var_page.boxes.create(category: "text")
+    end
   end
 
   # for our demo we have only one newspaper :D

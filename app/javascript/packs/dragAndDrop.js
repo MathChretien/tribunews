@@ -1,4 +1,4 @@
-import Sortable from "sortablejs";
+import Sortable from "sortablejs" ;
 const dragAndDropInit = () => {
 
   var libraryBox = document.querySelector("#library");
@@ -26,15 +26,15 @@ const dragAndDropInit = () => {
   const addPictureToBox = (box) => {
     const newPhoto = box.querySelector("[data-chosen='false']");
     const oldPhoto = box.querySelector("[data-chosen='true']");
-    placeBackInLibrary(oldPhoto)
-    console.log(oldPhoto)
-    if (!newPhoto) return
-      console.log(newPhoto.dataset)
-    console.log( box.dataset)
+    placeBackInLibrary(oldPhoto);
+    if (!newPhoto) return console.log( newPhoto.dataset);
+    console.log( box.dataset);
+
     newPhoto.dataset.chosen = "true";
     makeApiCall({
        picture_id: newPhoto.dataset.id,
-       box_id: box.dataset.boxNumber
+       box_id: box.dataset.boxNumber,
+       category: "pic"
      });
   }
 
@@ -54,7 +54,7 @@ const dragAndDropInit = () => {
     libraryBox.appendChild(photo);
     makeApiCall({
        picture_id: photo.dataset.id,
-       box_id: nil
+       box_id: null
      });
   }
 };

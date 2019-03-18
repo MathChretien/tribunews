@@ -9,7 +9,7 @@
        <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
        <%= f.input :photo_cache, as: :hidden %>
        <% end %>
-       <div id="nice_upload_button" class="nice_button">add some new family gems</div>
+       <div id="nice_upload_button" class="nice_button">add new pictures</div>
      </div>
      <div class = "library-content">
       <div class="pix-container" id="library">
@@ -42,7 +42,13 @@
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-          <%= render "pages/page_layouts/layout_02" %>
+          <!--  -->
+             <!-- default layout... maybe to remove if all works well -->
+          <% @page.layout = "2" %>
+           <!-- @page.layout = "2" if @page.layout.nil?  -->
+
+
+          <%= render "pages/page_layouts/layout_0"+@page.layout %>
         </div>
 
       </div>
@@ -60,6 +66,13 @@
     <div class="layout-byheader">
     </div>
     <div class="layout-content">
+      <%= image_tag("layouts/layout_00", class:"layout_icon", id:"layout_icon_01")%>
+      <%= image_tag("layouts/layout_01", class:"layout_icon", id:"layout_icon_02")%>
+      <%= image_tag("layouts/layout_02", class:"layout_icon layout_active", id:"layout_icon_03")%>
+      <%= image_tag("layouts/layout_03", class:"layout_icon", id:"layout_icon_04")%>
+      <%= image_tag("layouts/layout_04", class:"layout_icon", id:"layout_icon_05")%>
+      <%= image_tag("layouts/layout_05", class:"layout_icon", id:"layout_icon_06")%>
+
 
     </div>
   </div>
