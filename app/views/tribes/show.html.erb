@@ -8,7 +8,7 @@
       <div class="button-sidebar">
         <li><i class="fas fa-users"></i> Info </li>
         <li><i class="fas fa-users"></i> <%= link_to 'My Account', edit_user_registration_path %>  </li>
-        <li><i class="fas fa-users"></i> Subscription (Link to)</li>
+        <li><i class="fas fa-users"></i> <%= link_to "Subscribe now", new_user_session_path %></li>
       </div>
     </div>
   </div>
@@ -34,12 +34,14 @@
     </div>
   </div>
   <div class="member-list">
+    <div class="member-select">
     <h2 class= "title-dashboard"> Members of your Tribe </h2>
     <%= render  'share/member-action', user: @user %>
 
     <% current_user.tribe.users.each do |user| %>
     <%= render  'share/member-tag', user: user %>
     <% end %>
+    </div>
   </div>
 
 
