@@ -7,8 +7,9 @@ const dragAndDropInit = () => {
     onAdd: function (event) {
       const photo = document.querySelector("[data-chosen='true']");
       console.log(photo);
-      if (!photo) return
-      photo.dataset.chosen = "false";
+
+
+
       placeBackInLibrary(photo);
     },
   });
@@ -24,11 +25,11 @@ const dragAndDropInit = () => {
   })
 
   const addPictureToBox = (box) => {
+    console.log("addPictureToBox");
+    console.log(box);
     const newPhoto = box.querySelector("[data-chosen='false']");
     const oldPhoto = box.querySelector("[data-chosen='true']");
-    placeBackInLibrary(oldPhoto);
     if (!newPhoto) return console.log( newPhoto.dataset);
-    console.log( box.dataset);
 
     newPhoto.dataset.chosen = "true";
     makeApiCall({
@@ -62,13 +63,24 @@ const dragAndDropInit = () => {
 
   };
   const placeBackInLibrary = photo => {
+    console.log("placeBackInLibrary");
+    console.log(photo);
     if (!photo) return
+    photo.dataset.chosen = "false";
     libraryBox.appendChild(photo);
     makeApiCallBack({
        picture_id: photo.dataset.id,
        box_id: null,
        category: null
      });
+
+    // TO SET the CSS on the img < to change
+      document.querySelectorAll('.pix-container img').forEach((img) => {
+      console.log(img);
+      img.width = 150 ;
+      img.height = 150;
+      })
+
   }
 };
 
