@@ -9,11 +9,7 @@ class NewspapersController < ApplicationController
     @new_picture = Picture.new
     @tribe = current_user.tribe
     @newspaper = @tribe.newspapers.first # normally: last but we work with 1
-    if params[:page_nr].nil?
-      @page = @newspaper.pages.first
-    else
-      @page = @newspaper.pages[:page_nr]
-    end
+    @page = @newspaper.pages.first; # TODO CHANGE TO CURRENT PAGE
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
 
@@ -52,10 +48,9 @@ private
   def get_boxes(page, category)
     res = []
     page.boxes.each do |b|
-      if b.category == "pic" && !b.picture.nil?
+      if category == :pic && !b.picture.nil?
         res << b
-
-      elsif b.category == "text" && b.category == "text"
+      elsif category == :text && b.category == "text"
         res << b
       end
       # raise
