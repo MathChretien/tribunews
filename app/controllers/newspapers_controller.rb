@@ -6,10 +6,21 @@ class NewspapersController < ApplicationController
   end
 
   def show
+    puts ">>>>>"
+    puts params[:page_number]
+
     @new_picture = Picture.new
     @tribe = current_user.tribe
     @newspaper = @tribe.newspapers.first # normally: last but we work with 1
-    @page = @newspaper.pages.first # TODO CHANGE TO CURRENT PAGE
+
+    if params[:page_number].nil?
+      @page = @newspaper.pages.first
+    else
+      new_page_nr = params[:page_number].to_i
+      @page = @newspaper.pages.where(number: new_page_nr).first
+      puts @page.id
+      puts new_page_nr
+    end
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
 
@@ -39,6 +50,7 @@ class NewspapersController < ApplicationController
    @new_picture = Picture.new
    @tribe = current_user.tribe
    @newspaper = @tribe.newspapers.last
+
   end
 
   def box_photo
@@ -67,5 +79,4 @@ private
     return res
 
   end
-
 end
