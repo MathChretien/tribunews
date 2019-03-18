@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'newspapers/pdf'
   post 'box_photo', to: "newspapers#box_photo"
   delete 'newspapers/:id', to: 'newspapers#destroy'
+  post 'back_library', to: "newspapers#back_library"
+  patch 'change_layout', to: "pages#change_layout"
   resources :boxes
 
   resources :tribes
