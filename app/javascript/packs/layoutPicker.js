@@ -18,7 +18,7 @@ const updatePageLayout = (pageNr, newLayoutNr) => {
     page_layout: newLayoutNr
   };
   fetch("/change_layout", {
-    method: "patch",
+    method: "PATCH",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'

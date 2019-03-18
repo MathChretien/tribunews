@@ -22,7 +22,13 @@ const changePageInit = () => {
     page.innerHTML = beforePage;
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
-
+    // fetch("/newspapers/show?page_number="+beforePage, {
+    //   method: "get",
+    //   // headers: {
+    //   //   'Accept': 'application/json',
+    //   //   'Content-Type': 'application/json'
+    //   // }
+    // });
   });
   console.log(page);
 
@@ -34,19 +40,17 @@ if (changeButtonForward) {
     const nextPage = parseInt(page.innerHTML,10) + 1;
     checkVisibility(nextPage);
     page.innerHTML = nextPage;
-    console.log(page);
+    // console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
-
-
-    fetch("/pages/show/?page="+nextPage, {
-      method: "get",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    });
+    // fetch("/newspapers/show?page_number="+nextPage, {
+    //   method: "get",
+    //   // headers: {
+    //   //   'Accept': 'application/json',
+    //   //   'Content-Type': 'application/json'
+    //   // }
+    // });
   });
-  console.log(page);
+  console.log("hrlloooooo" + page);
 };
 
 function checkVisibility(currentPage) {

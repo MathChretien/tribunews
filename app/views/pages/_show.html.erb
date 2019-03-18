@@ -1,0 +1,5 @@
+hellooo page id = <%= @page.id %> and pagenumber = <%= @page.page_number %>
+<%= @page.layout = "2" if @page.layout.nil?  %>
+
+<%= render "pages/page_layouts/layout_0#{@page.layout}" %>
+
