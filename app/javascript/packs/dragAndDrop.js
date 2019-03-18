@@ -49,12 +49,25 @@ const dragAndDropInit = () => {
       body: JSON.stringify(params)
     });
   };
+  const makeApiCallBack = params => {
+    console.log(params)
+    fetch("/back_library", {
+      method: "post",
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(params)
+    });
+
+  };
   const placeBackInLibrary = photo => {
     if (!photo) return
     libraryBox.appendChild(photo);
-    makeApiCall({
+    makeApiCallBack({
        picture_id: photo.dataset.id,
-       box_id: null
+       box_id: null,
+       category: null
      });
   }
 };
