@@ -16,9 +16,13 @@
           <% @newspaper.pictures.each do |pic| %>
              <% if pic.box.nil? %>
              <div class="pic" data-chosen="false" data-id="<%= pic.id %>">
-                <%= link_to '',  { action: :destroy, id: pic.id }, method: :delete, data: { confirm: 'Are you sure?' } , class: "fas fa-times-circle" %>
+              <div class="croix">
+                <%= link_to '',  { action: :destroy, id: pic.id }, method: :delete, data: { confirm: 'Do you want to get rid of it ?' } , class: "fas fa-times-circle" %>
+                </div>
+                <div class="minitoff">
                <%= cl_image_tag(pic.photo,
                  width:150, height:150, crop: :fill) %>
+              </div>
               </div>
              <%end%>
            <% end %>
