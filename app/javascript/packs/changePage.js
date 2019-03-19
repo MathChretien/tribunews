@@ -22,8 +22,6 @@
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
     updatePageLayout(document.getElementById("picture_page_layout").value);
-    window.location.reload(false);
-    console.log("eklgjdl");
   });
   console.log(page);
 
@@ -38,8 +36,6 @@ if (changeButtonForward) {
     // console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
     updatePageLayout(document.getElementById("picture_page_layout").value);
-    window.location.reload(false);
-        console.log("forward!");
 
 
     // fetch("/newspapers/show?page_number="+nextPage, {
