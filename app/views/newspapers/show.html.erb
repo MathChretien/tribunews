@@ -19,10 +19,9 @@
       <div class="pix-container" id="library">
           <% @newspaper.pictures.each do |pic| %>
              <% if pic.box.nil? %>
-             <div class="pic" data-chosen="false" data-id="<%= pic.id %>">
+             <div class="pic dragged" data-chosen="false" data-id="<%= pic.id %>">
                 <%= link_to '',  { action: :destroy, id: pic.id }, method: :delete, data: { confirm: 'Are you sure?' } , class: "fas fa-times-circle" %>
-               <%= cl_image_tag(pic.photo,
-                 width:150, height:150, crop: :fill) %>
+               <%= cl_image_tag(pic.photo, crop: :fill) %>
               </div>
              <%end%>
            <% end %>

@@ -2,7 +2,7 @@
 
     <div class="photo-box pic photobook_pic" id="box_02_01" data-chosen="true" data-boxes="true" data-id="<%= @pic_boxes[0].try(:picture).try(:id) %>" data-box-number="<%= @newspaper.pages.first.boxes.first.id%>" >
       <% if @pic_boxes[0].nil? %>
-        NO PIC
+
         <% else %>
       <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_02_01") %>
     <%end%>
@@ -11,7 +11,7 @@
 
   <div class="photo-box pic photobook_pic" id="box_02_02" data-chosen="true" data-boxes="true" data-id="<%= @pic_boxes[1].try(:picture).try(:id) %>" data-box-number="<%= @newspaper.pages.first.boxes.second.id%>">
    <% if @pic_boxes[1].nil? %>
-   NO PIC
+
    <% else %>
    <%= cl_image_tag(@pic_boxes[1].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_02_01") %>
    <%end%>
