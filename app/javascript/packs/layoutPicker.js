@@ -7,7 +7,7 @@ const setAllButtonsInactive = () => {
   });
 };
 
-const saveUpdateLayout = (pageID, newLayoutNr) => {
+const saveLayoutToDB = (pageID, newLayoutNr) => {
   console.log('updating for page:' + pageID);
   const params = {
     page_id: pageID,
@@ -24,7 +24,7 @@ const saveUpdateLayout = (pageID, newLayoutNr) => {
 };
 
 const updatePageLayout = (layout_str) => {
-  console.log('updating: layout ==' + layout_str);
+  // console.log('updating: layout ==' + layout_str);
   setAllButtonsInactive();
   const activeLayoutButton = document.getElementById("layout_icon_0" + layout_str);
   activeLayoutButton.classList.add('layout_active');
@@ -42,7 +42,7 @@ const layoutPickerInit = () => {
       // console.log("layout" + layout);
       const pageID = document.getElementById("picture_page_id").value;
       console.log("updating voor pageid:" + pageID);
-      saveUpdateLayout(pageID,layout);
+      saveLayoutToDB(pageID,layout);
     });
   });
 };

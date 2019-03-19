@@ -19,7 +19,7 @@
              <% if pic.box.nil? %>
              <div class="pic" data-chosen="false" data-id="<%= pic.id %>" >
                <%= cl_image_tag(pic.photo,
-                 width:150, height:150, crop: :fill) %>
+                 width:350, height:300, crop: :fill) %>
               </div>
              <%end%>
            <% end %>

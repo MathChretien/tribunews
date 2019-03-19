@@ -17,6 +17,11 @@ class NewspapersController < ApplicationController
     end
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
+    # respond_to do |format|
+    #   format.js
+    #   format.html
+    # end
+
     # respond_to  do |format|
     #   format.html
     #   format.pdf do
