@@ -1,6 +1,6 @@
 <div class="layout" id="layout_title">
   <div id="box_layout_title">
-    <div id="box_00_01" data-box-number="@page.boxes.first.id">
+    <div id="box_00_01" data-box-number="@page.boxes.first.id" data-chosen="true" data-boxes="true" data-box-number="<%= @pic_boxes[0].id %>">
       <% if @pic_boxes[0].nil? %>
       <% else %>
       <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, id:"cl_01_01", class: "layout0-image") %>

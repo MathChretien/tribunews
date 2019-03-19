@@ -189,11 +189,14 @@ left:18px;
     width: 80px;
     opacity: .95;
     filter: invert(80%);
-
   }
 
   .layout_active {
     filter: none;
+  }
+
+  .unvisible {
+    visibility: hidden;
   }
 
 
