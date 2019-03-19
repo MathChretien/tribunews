@@ -27,7 +27,15 @@ const updatePageLayout = (layout_str) => {
   // console.log('updating: layout ==' + layout_str);
   setAllButtonsInactive();
   const activeLayoutButton = document.getElementById("layout_icon_0" + layout_str);
-  activeLayoutButton.classList.add('layout_active');
+  if (activeLayoutButton) {
+    activeLayoutButton.classList.add('layout_active');
+    document.querySelector(".layout-content").style.visibility="visible";
+  }
+  else if (layout_str=="0") {
+    document.querySelector(".layout-content").style.visibility="hidden";
+
+  };
+
 };
 
 const layoutPickerInit = () => {
@@ -44,7 +52,6 @@ const layoutPickerInit = () => {
       console.log("updating voor pageid:" + pageID);
       saveLayoutToDB(pageID,layout);
       window.location.reload(false);
-
     });
   });
 };

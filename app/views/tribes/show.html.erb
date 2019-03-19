@@ -2,18 +2,22 @@
 
   <div class="sidebar">
     <div class="title-sidebar">
-      TRIBU.NAME
+    <h3><%= @tribe.name%></h3>
     </div>
     <div class="action-sidebar">
       <div class="button-sidebar">
-        <li><i class="fas fa-users"></i> Info </li>
-        <li><i class="fas fa-users"></i> <%= link_to 'My Account', edit_user_registration_path %>  </li>
-        <li><i class="fas fa-users"></i> <%= link_to "Subscribe now", new_user_session_path %></li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %>  </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Subscribe now", new_user_session_path %></li>
       </div>
     </div>
   </div>
   <div class="main-content-dashboard">
 
+    <div class="tribe-avatar">
+      <h2>Tribu's Picture</h2>
+      <%= cl_image_tag @tribe.photo%>
+    </div>
     <div class="countdown">
       <h2 class= "title-dashboard"> </h2>
       <div class="counter">
