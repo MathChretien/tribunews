@@ -126,6 +126,14 @@
   min-height: 50vh;
 }
 
+.croix{
+position: relative;
+left:18px;
+}
+.fa-times-circle:hover{
+  text-decoration: none;
+  color:red;
+}
 .pic {
   // flex-grow: 1;
   display:flex;
