@@ -73,14 +73,6 @@ const dragAndDropInit = () => {
        box_id: null,
        category: null
      });
-
-    // TO SET the CSS on the img < to change
-      document.querySelectorAll('.pix-container img').forEach((img) => {
-      console.log(img);
-      img.width = 150 ;
-      img.height = 150;
-      })
-
   }
 };
 

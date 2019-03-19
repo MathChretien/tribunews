@@ -9,11 +9,12 @@ class PicturesController < ApplicationController
     @newspaper = current_user.tribe.current_newspaper
     new_params = picture_params
     new_params[:newspaper] = @newspaper
+    page = Page.find params[:picture][:page_id].to_i
     @picture = Picture.create!(new_params)
     if @picture.save!
-      redirect_to newspapers_show_path
+      redirect_to newspapers_show_path(page_number: page.number)
     else
-      redirect_back fallback_location: "newspapers/show"
+      redirect_back fallback_location: "newspapers/show?page_number=@page"
     end
 
   end
