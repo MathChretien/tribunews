@@ -10,8 +10,8 @@
     console.log(pageTest);
     if (pageTest === " 1 ") {
      changeButtonBack.style.visibility = "hidden";
-    };
-    updatePageLayout(document.getElementById("picture_page_layout").value);
+   };
+   updatePageLayout(document.getElementById("picture_page_layout").value);
  }
 
  if (changeButtonBack) {
@@ -21,7 +21,9 @@
     page.innerHTML = beforePage;
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
-    // updatePageLayout(document.getElementById("picture_page_layout").value);
+    updatePageLayout(document.getElementById("picture_page_layout").value);
+    window.location.reload(false);
+    console.log("eklgjdl");
   });
   console.log(page);
 
@@ -35,7 +37,10 @@ if (changeButtonForward) {
     page.innerHTML = nextPage;
     // console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
-    // updatePageLayout(document.getElementById("picture_page_layout").value);
+    updatePageLayout(document.getElementById("picture_page_layout").value);
+    window.location.reload(false);
+        console.log("forward!");
+
 
     // fetch("/newspapers/show?page_number="+nextPage, {
     //   method: "get",
@@ -45,7 +50,6 @@ if (changeButtonForward) {
     //   // }
     // });
   });
-  console.log("hrlloooooo" + page);
 };
 
 function checkVisibility(currentPage) {
