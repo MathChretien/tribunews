@@ -12,12 +12,19 @@
 }
 .title-sidebar {
   display: flex;
-
   height : 50px;
   background-image: linear-gradient(to right, $tribu-green, $tribu-yellow);
   justify-content: center;
   align-items: center;
   text-color : white;
+  h3 {
+    color: whitesmoke;
+    font-weight: 700;
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
 }
 
 .action-sidebar {
@@ -53,7 +60,6 @@
     color: gray;
   }
 }
-
 .main-content-dashboard {
   display: flex;
   flex-direction: column;
@@ -63,26 +69,24 @@
   background-color : #eeeeee;
   padding: 15px;
 }
-
-.action-edit {
-  width : 500px;
-  height : 70px;
-  background-color : $tribu-green;
-  margin: 10px;
-  border-radius: 8px;
-  color: white;
-
+.tribe-avatar {
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+  border-radius: 6px;
+  align-items: center;
+  margin-top: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $tribu-green;
+  img {
+    border-radius: 0px 0px 6px 6px;
+  }
+  h2 {
+    color: gray;
+    padding-top: 10px;
+  }
 }
-
-.title-dashboard-button {
-  background-color: $tribu-green;
-  border-radius: 10px;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  margin: 10px;
-}
-
 .countdown {
   width : 700px;
   height : 225px;
@@ -93,8 +97,16 @@
   border-width: 1px;
   text-align: center;
   border-radius: 6px;
+  margin-top: 30px;
 }
-
+.title-dashboard-button {
+  background-color: $tribu-green;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+}
 .countdown-text {
   font-size: 20px;
   font-weight: bold;
@@ -109,7 +121,15 @@
   text-align: center;
   align-items: center;
 }
-
+.action-edit {
+  width : 500px;
+  height : 70px;
+  background-color : $tribu-green;
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+  margin-top: 20px;
+}
 .member-list {
   border-color: $tribu-green;
   background-color: #eeeeee;
@@ -126,7 +146,6 @@
   background-color: white;
   border-radius: 6px;
 }
-
 .title-dashboard {
   color: $tribu-green;
   text-align: center;
@@ -135,18 +154,15 @@
     color: white;
   }
 }
-
 .counter {
  text-align: center;
 }
-
 .description-counter li {
   list-style-type: none;
   display:inline;
   padding: 22px;
   color: $tribu-green;
 }
-
 #demo {
   font-size: 60px;
   color: $tribu-green;

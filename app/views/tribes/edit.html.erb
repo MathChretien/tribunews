@@ -1,2 +1,38 @@
-<h1>Tribes#edit</h1>
-<p>Find me in app/views/tribes/edit.html.erb</p>
+<div class = "dashboard dash1">
+
+  <div class="sidebar-edit">
+    <div class="title-sidebar-edit">
+      <h3><%= @tribe.name%></h3>
+    </div>
+    <div class="action-sidebar-edit">
+      <div class="button-sidebar-edit">
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %>  </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Subscribe now', new_user_session_path %></li>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-dashboard-edit">
+    <div class="form-title">
+        <h3><%= @tribe.name%>'s Tribu Infos</h3>
+    </div>
+    <div class="form">
+      <div class="tribe-form-edit">
+        <%= simple_form_for @tribes do |f| %>
+        Name <%= f.text_field :name %>
+        Address <%= f.text_field :address %>
+        Description <%= f.text_area :description, input_html: {style: 'height:200px !important;'} %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit %>
+        <% end %>
+      </div>
+      <div class="image-tribu">
+        <h2>Tribu's Picture</h2>
+        <%= cl_image_tag @tribe.photo%>
+      </div>
+    </div>
+  </div>
+
+</div>
+
