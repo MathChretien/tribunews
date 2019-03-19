@@ -11,6 +11,7 @@
 
 
   <div class="photo-box pic photobook_pic" id="box_03_02" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.second.id%>">
+
    <% if @pic_boxes[1].nil? %>
    <% else %>
    <%= cl_image_tag(@pic_boxes[1].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_03_01") %>

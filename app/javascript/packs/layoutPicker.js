@@ -20,7 +20,7 @@ const saveLayoutToDB = (pageID, newLayoutNr) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(params)
-    });
+  });
 };
 
 const updatePageLayout = (layout_str) => {
@@ -43,6 +43,8 @@ const layoutPickerInit = () => {
       const pageID = document.getElementById("picture_page_id").value;
       console.log("updating voor pageid:" + pageID);
       saveLayoutToDB(pageID,layout);
+      window.location.reload(false);
+
     });
   });
 };
