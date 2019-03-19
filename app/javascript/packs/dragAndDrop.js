@@ -7,10 +7,8 @@ const dragAndDropInit = () => {
     onAdd: function (event) {
       const photo = document.querySelector("[data-chosen='true']");
       console.log(photo);
-
-
-
       placeBackInLibrary(photo);
+      window.location.reload(false);
     },
   });
 
@@ -20,6 +18,7 @@ const dragAndDropInit = () => {
       group: "shared",
       onAdd: function (evt) {
         addPictureToBox(box)
+        window.location.reload(false);
       },
     });
   })
@@ -37,6 +36,7 @@ const dragAndDropInit = () => {
        box_id: box.dataset.boxNumber,
        category: "pic"
      });
+
   }
 
   const makeApiCall = params => {
