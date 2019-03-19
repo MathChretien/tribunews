@@ -8,6 +8,7 @@ class NewspapersController < ApplicationController
   def show
     @new_picture = Picture.new
     @tribe = current_user.tribe
+
     @newspaper = @tribe.newspapers.last # normally: last but we work with 1
     if params[:page_number].nil?
       @page = @newspaper.pages.first
@@ -17,11 +18,11 @@ class NewspapersController < ApplicationController
     end
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
+
     # respond_to do |format|
     #   format.js
     #   format.html
     # end
-
     # respond_to  do |format|
     #   format.html
     #   format.pdf do
@@ -36,30 +37,43 @@ class NewspapersController < ApplicationController
     #  end
   end
 
+  def destroy
+      tribe = current_user.tribe
+      newspaper = tribe.newspapers.last
+      @pic = newspaper.pictures.find(params[:id].to_i)
+      @pic.destroy
+      redirect_to newspapers_show_path
+    end
+
   def pdf
    @new_picture = Picture.new
    @tribe = current_user.tribe
    @newspaper = @tribe.newspapers.last
- end
 
- def box_photo
-  pic = Picture.find params[:picture_id]
-  pic.update(box_id: params[:box_id])
-  box = Box.find params[:box_id]
-  box.update(category: params[:category])
-end
+  end
+
+  def box_photo
+    pic = Picture.find params[:picture_id]
+    pic.update(box_id: params[:box_id])
+    box = Box.find params[:box_id]
+    box.update(category: params[:category])
+  end
+
+  def back_library
+    pic = Picture.find params[:picture_id]
+    pic.update(box_id: params[:box_id])
+  end
 
 private
 
-def get_boxes(page, category)
-  res = []
-  page.boxes.each do |b|
-    if category == :pic && !b.picture.nil?
-      res << b
-    elsif category == :text && b.category == "text"
-      res << b
-    end
-      # raise
+  def get_boxes(page, category)
+    res = []
+    page.boxes.each do |b|
+      if category == :pic && !b.picture.nil?
+        res << b
+      elsif category == :text && b.category == "text"
+        res << b
+      end
     end
     return res
 

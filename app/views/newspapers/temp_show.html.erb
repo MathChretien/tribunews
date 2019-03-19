@@ -8,8 +8,6 @@
        <%= simple_form_for @new_picture do |f| %>
        <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
        <%= f.input :photo_cache, as: :hidden %>
-       <%= f.hidden_field :page_id, value: @page.id%>
-       <%= f.hidden_field :page_layout, value: @page.layout%>
        <% end %>
        <div id="nice_upload_button" class="nice_button">add new pictures</div>
      </div>
@@ -18,13 +16,9 @@
           <% @newspaper.pictures.each do |pic| %>
              <% if pic.box.nil? %>
              <div class="pic" data-chosen="false" data-id="<%= pic.id %>">
-              <div class="croix">
-                <%= link_to '',  { action: :destroy, id: pic.id }, method: :delete, data: { confirm: 'Do you want to get rid of it ?' } , class: "fas fa-times-circle" %>
-                </div>
-                <div class="minitoff">
+                <%= link_to '',  { action: :destroy, id: pic.id }, method: :delete, data: { confirm: 'Are you sure?' } , class: "fas fa-times-circle" %>
                <%= cl_image_tag(pic.photo,
-                 width:350, height:300, crop: :fill) %>
-              </div>
+                 width:150, height:150, crop: :fill) %>
               </div>
              <%end%>
            <% end %>
@@ -37,30 +31,31 @@
     </div>
     <div class="middle-byheader">
       <div class="btn btn-lg" id="pages_number">
-        <span class="num" style= "display: none"> <%= @page.number.to_i %> </span>
-        <h3 id = "num-change-page"> Page n°<%= @page.number.to_i %></h3>
+        <span class="num" style= "display: none"> <%= i = 1  %> </span>
+        <h3 id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></h3>
       </div>
       <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i>
       </div>
     </div>
     <div class="middle-content">
       <div class ="page-back">
-        <%= link_to newspapers_show_path(page_number: @page.number.to_i - 1 ) do %>
         <span class="arrow-sign" id = "back-button"><i class="fas fa-arrow-circle-left" ></i></span>
-        <% end %>
       </div>
       <div class="edit-pane">
         <div class="page-edition">
-          <%= render "pages/show" %>
+          <!--  -->
+             <!-- default layout... maybe to remove if all works well -->
+          <% @page.layout = "2" %>
+           <!-- @page.layout = "2" if @page.layout.nil?  -->
+
+
+          <%= render "pages/page_layouts/layout_0"+@page.layout %>
         </div>
 
       </div>
       <div class="page-forward">
-        <%= link_to newspapers_show_path(page_number: @page.number.to_i + 1) do %>
-
         <!-- here i could work with a form that does a submit, via js changepage.js -->
-          <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
-        <% end %>
+        <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
       </div>
     </div>
   </div>
@@ -71,15 +66,15 @@
     </div>
     <div class="layout-byheader">
     </div>
-    <div class="layout-content">
-      <%= image_tag("layouts/layout_1", class:"layout_icon", id:"layout_icon_01")%>
-      <%= image_tag("layouts/layout_2", class:"layout_icon", id:"layout_icon_02")%>
-      <%= image_tag("layouts/layout_3", class:"layout_icon", id:"layout_icon_03")%>
-      <%= image_tag("layouts/layout_4", class:"layout_icon", id:"layout_icon_04")%>
-      <%= image_tag("layouts/layout_5", class:"layout_icon", id:"layout_icon_05")%>
-      <%= image_tag("layouts/layout_6", class:"layout_icon", id:"layout_icon_06")%>
-    </div>
 
+    <div class="layout-content">
+      <%= image_tag("layouts/layout_00", class:"layout_icon", id:"layout_icon_01")%>
+      <%= image_tag("layouts/layout_01", class:"layout_icon", id:"layout_icon_02")%>
+      <%= image_tag("layouts/layout_02", class:"layout_icon layout_active", id:"layout_icon_03")%>
+      <%= image_tag("layouts/layout_03", class:"layout_icon", id:"layout_icon_04")%>
+      <%= image_tag("layouts/layout_04", class:"layout_icon", id:"layout_icon_05")%>
+      <%= image_tag("layouts/layout_05", class:"layout_icon", id:"layout_icon_06")%>
+    </div>
   </div>
 </div>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>

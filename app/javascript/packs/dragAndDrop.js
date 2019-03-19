@@ -7,9 +7,8 @@ const dragAndDropInit = () => {
     onAdd: function (event) {
       const photo = document.querySelector("[data-chosen='true']");
       console.log(photo);
-      if (!photo) return
-      photo.dataset.chosen = "false";
       placeBackInLibrary(photo);
+      window.location.reload(false);
     },
   });
 
@@ -19,16 +18,17 @@ const dragAndDropInit = () => {
       group: "shared",
       onAdd: function (evt) {
         addPictureToBox(box)
+        window.location.reload(false);
       },
     });
   })
 
   const addPictureToBox = (box) => {
+    console.log("addPictureToBox");
+    console.log(box);
     const newPhoto = box.querySelector("[data-chosen='false']");
     const oldPhoto = box.querySelector("[data-chosen='true']");
-    placeBackInLibrary(oldPhoto);
     if (!newPhoto) return console.log( newPhoto.dataset);
-    console.log( box.dataset);
 
     newPhoto.dataset.chosen = "true";
     makeApiCall({
@@ -36,6 +36,7 @@ const dragAndDropInit = () => {
        box_id: box.dataset.boxNumber,
        category: "pic"
      });
+
   }
 
   const makeApiCall = params => {
@@ -49,13 +50,37 @@ const dragAndDropInit = () => {
       body: JSON.stringify(params)
     });
   };
+  const makeApiCallBack = params => {
+    console.log(params)
+    fetch("/back_library", {
+      method: "post",
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(params)
+    });
+
+  };
   const placeBackInLibrary = photo => {
+    console.log("placeBackInLibrary");
+    console.log(photo);
     if (!photo) return
+    photo.dataset.chosen = "false";
     libraryBox.appendChild(photo);
-    makeApiCall({
+    makeApiCallBack({
        picture_id: photo.dataset.id,
-       box_id: null
+       box_id: null,
+       category: null
      });
+
+    // TO SET the CSS on the img < to change
+      document.querySelectorAll('.pix-container img').forEach((img) => {
+      console.log(img);
+      img.width = 150 ;
+      img.height = 150;
+      })
+
   }
 };
 

@@ -123,8 +123,17 @@
   justify-content:flex-start;
   padding:8px;
   align-items: flex-start;
+  min-height: 50vh;
 }
 
+.croix{
+position: relative;
+left:18px;
+}
+.fa-times-circle:hover{
+  text-decoration: none;
+  color:red;
+}
 .pic {
   // flex-grow: 1;
   display:flex;
@@ -162,7 +171,9 @@
   filter: grayscale(1);
   opacity: 0.5;
 }
-
+.fa-times-circle{
+  color:red;
+}
 
 .layout-content {
     display:flex;
@@ -184,5 +195,15 @@
   .layout_active {
     filter: none;
   }
+
+
+  .drag_drop_cover_newspaper {
+
+    position: absolute;
+    width: 500px;
+    height: 380px;
+
+  }
+
 
 }
