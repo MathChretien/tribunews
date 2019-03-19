@@ -58,9 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
     t.string "address"
     t.string "description"
     t.date "subscribed_on"
-    t.bigint "user_id"
     t.string "photo"
-    t.index ["user_id"], name: "index_tribes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,8 +69,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "firstName"
-    t.string "lastName"
     t.string "first_name"
     t.string "last_name"
     t.bigint "tribe_id"
@@ -90,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["tribe_id"], name: "index_users_on_tribe_id"
   end
 
@@ -98,6 +95,5 @@ ActiveRecord::Schema.define(version: 2019_03_13_141614) do
   add_foreign_key "pages", "newspapers"
   add_foreign_key "pictures", "boxes"
   add_foreign_key "pictures", "newspapers"
-  add_foreign_key "tribes", "users"
   add_foreign_key "users", "tribes"
 end
