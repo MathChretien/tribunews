@@ -7,42 +7,53 @@ const setAllButtonsInactive = () => {
   });
 };
 
-const updatePageLayout = (pageNr, newLayoutNr) => {
-  console.log('updating for page:' + pageNr);
-  const currentPage = getPageNr();
-  if (currentPage == null) {
-    console.log("ERROR GETTING PAGENR");
-  }
+const saveLayoutToDB = (pageID, newLayoutNr) => {
+  console.log('updating for page:' + pageID);
   const params = {
-    page_id: pageNr,
+    page_id: pageID,
     page_layout: newLayoutNr
   };
   fetch("/change_layout", {
-    method: "patch",
+    method: "POST",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(params)
-    });
+  });
+};
+
+const updatePageLayout = (layout_str) => {
+  // console.log('updating: layout ==' + layout_str);
+  setAllButtonsInactive();
+  const activeLayoutButton = document.getElementById("layout_icon_0" + layout_str);
+  if (activeLayoutButton) {
+    activeLayoutButton.classList.add('layout_active');
+    document.querySelector(".layout-content").style.visibility="visible";
+  }
+  else if (layout_str=="0") {
+    document.querySelector(".layout-content").style.visibility="hidden";
+
+  };
+
 };
 
 const layoutPickerInit = () => {
   const layoutButtons = document.querySelectorAll(".layout_icon");
   layoutButtons.forEach((button) => {
-    button.classList.remove('layout_active');
     button.addEventListener("click", () => {
       setAllButtonsInactive();
       event.currentTarget.classList.add('layout_active');
-      const pageNr = getPageNr();
       const layoutID = event.currentTarget.id;
-      console.log("layoutID" + layoutID);
-      const layoutNr = parseInt(layoutID.split('_')[2], 10) - 1;
-      console.log("layoutNr" + layoutNr);
-      updatePageLayout(pageNr,layoutNr);
+      // console.log("layoutID" + layoutID);
+      const layout = layoutID.split('_')[2][1];
+      // console.log("layout" + layout);
+      const pageID = document.getElementById("picture_page_id").value;
+      console.log("updating voor pageid:" + pageID);
+      saveLayoutToDB(pageID,layout);
+      window.location.reload(false);
     });
-    document.querySelector("#layout_icon_02").classList.add('layout_active');
   });
 };
 
-export {layoutPickerInit};
+export {layoutPickerInit, updatePageLayout};

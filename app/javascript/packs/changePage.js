@@ -1,18 +1,17 @@
-// import {getPageNr} from './changePage';
+ import {updatePageLayout} from './layoutPicker';
 
-const changePageInit = () => {
+
+ const changePageInit = () => {
   let page = document.querySelector(".num");
   let titlePage = document.querySelector("#num-change-page");
-  // console.log(page);
-
   const changeButtonBack = document.getElementById("back-button");
-
   if (page) {
     let pageTest = page.innerHTML;
     console.log(pageTest);
     if (pageTest === " 1 ") {
      changeButtonBack.style.visibility = "hidden";
    };
+   updatePageLayout(document.getElementById("picture_page_layout").value);
  }
 
  if (changeButtonBack) {
@@ -22,7 +21,7 @@ const changePageInit = () => {
     page.innerHTML = beforePage;
     console.log(page);
     titlePage.innerHTML = `Page n°${beforePage}`;
-
+    updatePageLayout(document.getElementById("picture_page_layout").value);
   });
   console.log(page);
 
@@ -34,19 +33,19 @@ if (changeButtonForward) {
     const nextPage = parseInt(page.innerHTML,10) + 1;
     checkVisibility(nextPage);
     page.innerHTML = nextPage;
-    console.log(page);
+    // console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
+    updatePageLayout(document.getElementById("picture_page_layout").value);
 
 
-    fetch("/pages/show/?page="+nextPage, {
-      method: "get",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    });
+    // fetch("/newspapers/show?page_number="+nextPage, {
+    //   method: "get",
+    //   // headers: {
+    //   //   'Accept': 'application/json',
+    //   //   'Content-Type': 'application/json'
+    //   // }
+    // });
   });
-  console.log(page);
 };
 
 function checkVisibility(currentPage) {

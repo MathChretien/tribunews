@@ -1,14 +1,14 @@
-<div class="layout" id="layout_01">
-  <div class="box pic photobook_pic" id="box_01_01" data-box-number="1">
+<div class="layout" id="layout_02">
+  <div class="box pic photobook_pic" id="box_02_01" data-box-number="<%= @page.boxes.first.id%>">
     <% if @pic_boxes[0].nil? %>
-     NO PIC
+
     <% else %>
     <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_02_01") %>
     <%end%>
   </div>
 
   <%= simple_form_for(@text_boxes[0]) do |f| %>
-  <div class="box text" content-editable = "true" id="box_01_02">
+  <div class="box text" content-editable = "true" id="box_02_02">
       <p><%= @text_boxes[0].content_text %></p>
   </div>
   <%= f.hidden_field :content_text, value: "" %>

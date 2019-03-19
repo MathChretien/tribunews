@@ -126,6 +126,14 @@
   min-height: 50vh;
 }
 
+.croix{
+position: relative;
+left:18px;
+}
+.fa-times-circle:hover{
+  text-decoration: none;
+  color:red;
+}
 .pic {
   // flex-grow: 1;
   display:flex;
@@ -181,11 +189,15 @@
     width: 80px;
     opacity: .95;
     filter: invert(80%);
-
   }
 
   .layout_active {
     filter: none;
   }
+
+  .unvisible {
+    visibility: hidden;
+  }
+
 
 }
