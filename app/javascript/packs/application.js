@@ -5,7 +5,7 @@ import {countdownInit} from './countdown';
 import {fullscreenInit} from './fullscreen';
 import {dragAndDropInit} from './dragAndDrop';
 import {textBoxEditInit} from './editTextBox';
-import {layoutPickerInit} from './layoutPicker';
+import {layoutPickerInit, updatePageLayout} from './layoutPicker';
 
 countdownInit();
 pictureUploadInit();

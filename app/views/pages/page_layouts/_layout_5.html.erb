@@ -1,3 +1,4 @@
+should be layout 5
 <div class="layout" id="layout_05">
 
   <div class="picture_row">
@@ -19,15 +20,8 @@
    </div>
  </div>
 
-
- <%= simple_form_for(@text_boxes[0]) do |f| %>
-  <div class="box text" content-editable = "true" id="box_05_05">
-      <p><%= @text_boxes[0].content_text %></p>
-  </div>
-  <%= f.hidden_field :content_text, value: "" %>
-  <% end %>
-
  <div class="picture_row">
+
    <div class="photo-box pic photobook_pic" id="box_05_03" data-chosen="true" data-boxes="true" data-box-number="3">
     <% if @pic_boxes[2].nil? %>
 

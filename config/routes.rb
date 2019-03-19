@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'newspapers/show'
   get 'newspapers/pdf'
   post 'box_photo', to: "newspapers#box_photo"
-  patch 'change_layout', to: "pages#change_layout"
+  post 'change_layout', to: "pages#change_layout"
   resources :boxes
 
   resources :tribes
