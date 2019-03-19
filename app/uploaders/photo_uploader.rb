@@ -6,8 +6,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
      gravity: :face
   end
 
-   version :fes do
+  version :fes do
     cloudinary_transformation effect: "fes:30", radius: 80,
      gravity: :face
   end
+
 end

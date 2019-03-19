@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :pictures
   devise_for :users, controllers: { invitations: 'invitations' }
   resources :users, only: [:edit, :show, :update]
-  root to: 'tribes#index'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
