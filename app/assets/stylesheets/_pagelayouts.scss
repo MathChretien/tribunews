@@ -20,8 +20,11 @@
 }
 
 .photobook_pic {
-  display:flex;
-  justify-content:center;
+  // MIGHT NEED TO PUT THQT BQCK !!
+  // display:flex;
+  // justify-content:center;
+    // MIGHT NEED TO PUT THQT BQCK !!
+
   margin: 8px;
   // margin-right: 12px;
   box-shadow: 8px 16px 34px -11px rgba(0,0,0,0.2);
@@ -36,14 +39,19 @@
 
 
 #box_layout_title {
-    // height:700px; //overwrite .box
+    // height:700px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // MAYBE NEED TO PUT THAT BACK !!!
+    // justify-content: center;
     text-align:center;
     position:relative;
     margin:0;
+    padding:0;
     height:860px;
+    overflow: hidden;
+    // width:550px;
+    // width:
 
     .tribe-name{
       margin-top:400px;
@@ -65,6 +73,25 @@
       font-weight:700;
       font-size:20px;
     }
+
+    #box_00_01 {
+      margin:0;
+      padding:0;
+      // height:100% !important;
+      height: 858px;
+    }
+  }
+
+  .layout_title_foreground {
+    position: absolute;
+    left: 170px;
+
+  }
+  .layout0-image {
+    // overflow: hidden;
+    height: 858px;
+    object-fit: cover;
+    object-position: center;
   }
 
   #layout_title_logo {

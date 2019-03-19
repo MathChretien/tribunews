@@ -7,7 +7,11 @@ class Tribe < ApplicationRecord
     return if self.newspapers.any?
     newspaper = self.newspapers.create(published_on: Date.today.end_of_month)
     (1..12).each do |number|
+      if number == 1
+        var_page = newspaper.pages.create(number: number.to_s, layout: "0")
+      else
       var_page = newspaper.pages.create(number: number.to_s, layout: "3")
+    end
       9.times do |box|
         var_page.boxes.create
       end
