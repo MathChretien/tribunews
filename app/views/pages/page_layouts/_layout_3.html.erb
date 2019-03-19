@@ -1,6 +1,6 @@
-<<<<<<< HEAD:app/views/pages/page_layouts/_layout_3.html.erb
+
 <div class="layout" id="layout_03">
-  <div class="photo-box pic photobook_pic" id="box_03_01" data-chosen="true" data-boxes="true" data-box-number="<%= @newspaper.pages.first.boxes.first.id%>" >
+  <div class="photo-box pic photobook_pic" id="box_03_01" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.first.id%>" >
     <% if @pic_boxes[0].nil? %>
      NO PIC
     <% else %>
@@ -9,8 +9,8 @@
   </div>
 
 
-<<<<<<< HEAD:app/views/pages/page_layouts/_layout_3.html.erb
-  <div class="photo-box pic photobook_pic" id="box_03_02" data-chosen="true" data-boxes="true" data-box-number="<%= @newspaper.pages.first.boxes.second.id%>">
+
+  <div class="photo-box pic photobook_pic" id="box_03_02" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.second.id%>">
    <% if @pic_boxes[1].nil? %>
    <% else %>
    <%= cl_image_tag(@pic_boxes[1].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_03_01") %>
