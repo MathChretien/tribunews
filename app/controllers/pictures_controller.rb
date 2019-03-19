@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
     if @picture.save!
       redirect_to newspapers_show_path
     else
-      render :newspapers_show
+      redirect_back fallback_location: "newspapers/show"
     end
 
   end

@@ -6,24 +6,23 @@ class NewspapersController < ApplicationController
   end
 
   def show
-    puts ">>>>>"
-    puts params[:page_number]
-
     @new_picture = Picture.new
     @tribe = current_user.tribe
-    @newspaper = @tribe.newspapers.first # normally: last but we work with 1
 
+    @newspaper = @tribe.newspapers.last # normally: last but we work with 1
     if params[:page_number].nil?
       @page = @newspaper.pages.first
     else
       new_page_nr = params[:page_number].to_i
       @page = @newspaper.pages.where(number: new_page_nr).first
-      puts @page.id
-      puts new_page_nr
     end
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
 
+    # respond_to do |format|
+    #   format.js
+    #   format.html
+    # end
     # respond_to  do |format|
     #   format.html
     #   format.pdf do
