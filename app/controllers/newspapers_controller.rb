@@ -6,6 +6,7 @@ class NewspapersController < ApplicationController
   end
 
   def show
+    @no_footer = true
     @new_picture = Picture.new
     @tribe = current_user.tribe
 
