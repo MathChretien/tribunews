@@ -7,6 +7,7 @@ class TribesController < ApplicationController
   end
 
   def show
+    @message = Message.new
     @new_user = User.new
   end
 
