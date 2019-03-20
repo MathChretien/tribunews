@@ -4,7 +4,7 @@
     <% if @pic_boxes[0].nil? %>
 
     <% else %>
-    <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_03_01") %>
+        <%= image_tag @pic_boxes[0].picture.photo.url(:layout_03) %>
     <%end%>
   </div>
 
@@ -14,7 +14,7 @@
 
    <% if @pic_boxes[1].nil? %>
    <% else %>
-   <%= cl_image_tag(@pic_boxes[1].picture.photo, crop: :fill, gravity: :face, width:500, height: 380, id:"cl_03_01") %>
+       <%= image_tag @pic_boxes[1].picture.photo.url(:layout_03) %>
    <%end%>
  </div>
 </div>
