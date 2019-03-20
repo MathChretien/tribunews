@@ -25,18 +25,18 @@ class NewspapersController < ApplicationController
     #   format.js
     #   format.html
     # end
-    # respond_to  do |format|
-    #   format.html
-    #   format.pdf do
-    #               render pdf: "titre newspaper",
-    #               page_size: 'A4',
-    #               template: "newspapers/pdf.html.erb",
-    #               layout: "pdf.html",
-    #               lowquality: true,
-    #               zoom: 1,
-    #               dpi: 75
-    #           end
-    #  end
+     respond_to  do |format|
+      format.html
+      format.pdf do
+                   render pdf: "titre newspaper",
+                   page_size: 'A4',
+                   template: "newspapers/pdf.html.erb",
+                   layout: "pdf.html",
+                   lowquality: true,
+                  zoom: 1,
+                   dpi: 75
+               end
+      end
   end
 
   def destroy
