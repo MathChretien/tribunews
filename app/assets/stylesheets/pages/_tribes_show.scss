@@ -1,4 +1,22 @@
 .chat-box{
-  min-height:500px;
-  border: 2px solid red;
+  min-height:200px;
+  border: 2px solid $tribu-green;
+}
+.chat-action {
+  .btn-infos {
+    background-color: $tribu-green;
+    color: white;
+    border: none !important;
+    &:hover {
+      background-color: $tribu-green2;
+    }
+    &:active {
+      background-color: $tribu-green !important;
+      border-style: none;
+      box-shadow: none !important;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }
