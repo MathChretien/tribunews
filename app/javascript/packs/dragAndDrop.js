@@ -73,6 +73,8 @@ const dragAndDropInit = () => {
     input_photo.value = newPhoto.dataset.id;
     input_box.value = box.dataset.boxNumber;
     input_category.value = "pic";
+    console.log(input_photo.value);
+    console.log(input_box.value);
     input_photo.parentElement.submit();
     // makeApiCall({
     //    picture_id: newPhoto.dataset.id,
@@ -98,6 +100,7 @@ const dragAndDropInit = () => {
     // });
     let input_photo = document.querySelector('#photo_box_picture_id');
     input_photo.value = photo.dataset.id;
+    console.log(input_photo.value);
     input_photo.parentElement.submit();
   }
 };

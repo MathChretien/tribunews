@@ -71,14 +71,14 @@ end
 
 private
 
-def get_boxes(page, category)
-  res = []
-  page.boxes.each do |b|
-    if category == :pic && !b.picture.nil?
-      res << b
-    elsif category == :text && b.category == "text"
-      res << b
-    end
+  def get_boxes(page, category)
+    res = []
+    page.boxes.order("id ASC").each do |b|
+      if category == :pic && !b.picture.nil?
+        res << b
+      elsif category == :text && b.category == "text"
+        res << b
+      end
   end
   return res
 
