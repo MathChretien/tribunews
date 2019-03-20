@@ -3,18 +3,20 @@
     <div id="box_00_01" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[0].id%>" data-id="<%= @pic_boxes[0].try(:picture).try(:id) %>">
       <% if @pic_boxes[0].nil? %>
       <% else %>
-      <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, id:"cl_01_01", class: "layout0-image") %>
+        <%= image_tag @pic_boxes[0].picture.photo.url(:frontpage) %>
+<!--        cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, id:"cl_00  _01", class: "layout0-image") -->
       <% end %>
+
       <%= image_tag "TRIBU_Logo_gradient_web_with_alpha.png", height: 50, width:75, id:"layout_title_logo"%>
     </div>
     <div class = "layout_title_foreground">
       <div class="tribe-name">
         <h2>our monthly</h2>
-        <h1>Vandergooten</h1>
+        <h1><%=@tribe.name%></h1>
         <h2>family newsletter</h2>
       </div>
       <div class="month">
-        september 2017
+        <%=@newspaper.published_on.strftime("%B %Y")%>
       </div>
     </div>
   </div>
