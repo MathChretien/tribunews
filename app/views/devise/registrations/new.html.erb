@@ -9,6 +9,9 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+           <%= f.simple_fields_for "tribe_attributes" do |p| %>
+            <%= p.input :name %>
+          <% end %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
@@ -32,9 +35,7 @@
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
 
-          <%= f.fields_for :tribe do |p| %>
-            <%= p.input :name %>
-          <% end %>
+
 
         </div>
 

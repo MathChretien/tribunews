@@ -40,47 +40,47 @@ class NewspapersController < ApplicationController
   end
 
   def destroy
-      tribe = current_user.tribe
-      newspaper = tribe.newspapers.last
-      @pic = newspaper.pictures.find(params[:id].to_i)
-      @pic.destroy
-      redirect_to newspapers_show_path
-    end
+    tribe = current_user.tribe
+    newspaper = tribe.newspapers.last
+    @pic = newspaper.pictures.find(params[:id].to_i)
+    @pic.destroy
+    redirect_to newspapers_show_path
+  end
 
   def pdf
    @new_picture = Picture.new
    @tribe = current_user.tribe
    @newspaper = @tribe.newspapers.last
 
-  end
+ end
 
-  def box_photo
-    pic = Picture.find params[:pic][:picture_id]
-    pic.update(box_id: params[:pic][:box_id])
-    box = Box.find params[:pic][:box_id]
-    box.update(category: params[:pic][:category])
-    redirect_to newspapers_show_path(page_number: params[:pic][:page_number])
-  end
+ def box_photo
+  pic = Picture.find params[:pic][:picture_id]
+  pic.update(box_id: params[:pic][:box_id])
+  box = Box.find params[:pic][:box_id]
+  box.update(category: params[:pic][:category])
+  redirect_to newspapers_show_path(page_number: params[:pic][:page_number])
+end
 
-  def back_library
-    pic = Picture.find params[:photo_box][:picture_id]
-    pic.update(box_id: params[:box_id], box_id: nil)
-    redirect_to newspapers_show_path(page_number: params[:photo_box][:page_number])
+def back_library
+  pic = Picture.find params[:photo_box][:picture_id]
+  pic.update(box_id: params[:box_id], box_id: nil)
+  redirect_to newspapers_show_path(page_number: params[:photo_box][:page_number])
 
-  end
+end
 
 private
 
-  def get_boxes(page, category)
-    res = []
-    page.boxes.each do |b|
-      if category == :pic && !b.picture.nil?
-        res << b
-      elsif category == :text && b.category == "text"
-        res << b
-      end
+def get_boxes(page, category)
+  res = []
+  page.boxes.each do |b|
+    if category == :pic && !b.picture.nil?
+      res << b
+    elsif category == :text && b.category == "text"
+      res << b
     end
-    return res
-
   end
+  return res
+
+end
 end
