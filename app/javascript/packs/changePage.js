@@ -36,6 +36,7 @@ if (changeButtonForward) {
     // console.log(page);
     titlePage.innerHTML = `Page n°${nextPage}`;
     updatePageLayout(document.getElementById("picture_page_layout").value);
+    console.log("changeButtonForward");
 
 
     // fetch("/newspapers/show?page_number="+nextPage, {

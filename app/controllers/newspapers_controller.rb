@@ -54,15 +54,18 @@ class NewspapersController < ApplicationController
   end
 
   def box_photo
-    pic = Picture.find params[:picture_id]
-    pic.update(box_id: params[:box_id])
-    box = Box.find params[:box_id]
-    box.update(category: params[:category])
+    pic = Picture.find params[:pic][:picture_id]
+    pic.update(box_id: params[:pic][:box_id])
+    box = Box.find params[:pic][:box_id]
+    box.update(category: params[:pic][:category])
+    redirect_to newspapers_show_path(page_number: params[:pic][:page_number])
   end
 
   def back_library
-    pic = Picture.find params[:picture_id]
-    pic.update(box_id: params[:box_id])
+    pic = Picture.find params[:photo_box][:picture_id]
+    pic.update(box_id: params[:box_id], box_id: nil)
+    redirect_to newspapers_show_path(page_number: params[:photo_box][:page_number])
+
   end
 
 private
