@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post 'change_layout', to: "pages#change_layout"
   delete 'newspapers/:id', to: 'newspapers#destroy'
   post 'back_library', to: "newspapers#back_library"
-
+  resources :messages
 
   resources :boxes
   resources :tribes
