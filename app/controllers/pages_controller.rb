@@ -16,8 +16,9 @@ class PagesController < ApplicationController
   end
 
   def change_layout
-    page = Page.find params[:page_id]
-    # binding.pry
-    page.update!(layout: params[:page_layout])
+    page = Page.find params[:layout_picker][:page_id]
+    page.update!(layout: params[:layout_picker][:page_layout])
+
+    redirect_to newspapers_show_path(page_number: params[:layout_picker][:page_number])
   end
 end
