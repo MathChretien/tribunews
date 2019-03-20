@@ -41,7 +41,7 @@ const updatePageLayout = (layout_str) => {
 const layoutPickerInit = () => {
   const layoutButtons = document.querySelectorAll(".layout_icon");
   layoutButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
       setAllButtonsInactive();
       event.currentTarget.classList.add('layout_active');
       const layoutID = event.currentTarget.id;

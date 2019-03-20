@@ -1,3 +1,18 @@
+  <%= form_for "photo_box", url: back_library_path do |f| %>
+       <%= f.hidden_field :picture_id %>
+       <%= f.hidden_field :page_number, value: params[:page_number] %>
+
+  <% end %>
+
+    <%= form_for "pic", url: box_photo_path do |f| %>
+       <%= f.hidden_field :picture_id %>
+       <%= f.hidden_field :box_id %>
+       <%= f.hidden_field :page_number, value: params[:page_number] %>
+
+       <%= f.hidden_field :category %>
+
+  <% end %>
+
 <div class="main-body newspaper-show">
   <div class="wrapper">
     <div class="library-pane">
