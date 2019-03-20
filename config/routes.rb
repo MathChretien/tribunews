@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'tribes#index'
 
   get 'pages/index'
   get 'pages/show'
@@ -19,6 +18,12 @@ Rails.application.routes.draw do
   resources :pictures
   devise_for :users, controllers: { invitations: 'invitations' }
   resources :users, only: [:edit, :show, :update]
+
+  authenticated :user do
+    root 'tribes#show'
+  end
+
+  root to: 'tribes#index'
 
 
 
