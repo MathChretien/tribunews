@@ -9,8 +9,9 @@ class NewspapersController < ApplicationController
     @no_footer = true
     @new_picture = Picture.new
     @tribe = current_user.tribe
-
     @newspaper = @tribe.newspapers.last # normally: last but we work with 1
+
+
     if params[:page_number].nil?
       @page = @newspaper.pages.first
     else

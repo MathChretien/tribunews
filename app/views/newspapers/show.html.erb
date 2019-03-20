@@ -1,16 +1,22 @@
-  <%= form_for "photo_box", url: back_library_path do |f| %>
-  <%= f.hidden_field :picture_id %>
-  <%= f.hidden_field :page_number, value: params[:page_number] %>
+    <%= form_for "layout_picker", url: change_layout_path do |f| %>
+       <%= f.hidden_field :page_id %>
+       <%= f.hidden_field :page_layout %>
+       <%= f.hidden_field :page_number, value: params[:page_number] %>
+
 
   <% end %>
 
-  <%= form_for "pic", url: box_photo_path do |f| %>
+  <%= form_for "photo_box", url: back_library_path do |f| %>
   <%= f.hidden_field :picture_id %>
-  <%= f.hidden_field :box_id %>
   <%= f.hidden_field :page_number, value: params[:page_number] %>
+  <% end %>
 
-  <%= f.hidden_field :category %>
 
+    <%= form_for "pic", url: box_photo_path do |f| %>
+       <%= f.hidden_field :picture_id %>
+       <%= f.hidden_field :box_id %>
+       <%= f.hidden_field :page_number, value: params[:page_number] %>
+       <%= f.hidden_field :category %>
   <% end %>
 
   <div class="main-body newspaper-show">
@@ -87,12 +93,12 @@
     <div class="layout-byheader">
     </div>
     <div class="layout-content">
-      <%= cl_image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_1.png", class:"layout_icon", id:"layout_icon_01")%>
-      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_2.png", class:"layout_icon", id:"layout_icon_02")%>
-      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_3.png", class:"layout_icon", id:"layout_icon_03")%>
-      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_4.png", class:"layout_icon", id:"layout_icon_04")%>
-      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_5.png", class:"layout_icon", id:"layout_icon_05")%>
-      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_6.png", class:"layout_icon", id:"layout_icon_06")%>
+      <%= cl_image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_1.png", class:"layout_icon", id:"layout_icon_01", data: { layout:  1})%>
+      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_2.png", class:"layout_icon", id:"layout_icon_02", data: { layout:  2})%>
+      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_3.png", class:"layout_icon", id:"layout_icon_03", data: { layout:  3})%>
+      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_4.png", class:"layout_icon", id:"layout_icon_04", data: { layout:  4})%>
+      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_5.png", class:"layout_icon", id:"layout_icon_05", data: { layout:  5})%>
+      <%= image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_6.png", class:"layout_icon", id:"layout_icon_06", data: { layout:  6})%>
     </div>
 
   </div>

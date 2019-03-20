@@ -65,6 +65,7 @@ const dragAndDropInit = () => {
     if (!newPhoto) return console.log( newPhoto.dataset);
 
     newPhoto.dataset.chosen = "true";
+
     let input_photo = document.querySelector('#pic_picture_id');
     let input_box = document.querySelector('#pic_box_id');
     let input_category = document.querySelector('#pic_category');

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'tribes#index'
 
   get 'pages/index'
   get 'pages/show'
@@ -12,13 +11,19 @@ Rails.application.routes.draw do
   post 'change_layout', to: "pages#change_layout"
   delete 'newspapers/:id', to: 'newspapers#destroy'
   post 'back_library', to: "newspapers#back_library"
-
+  resources :messages
 
   resources :boxes
   resources :tribes
   resources :pictures
   devise_for :users, controllers: { invitations: 'invitations' }
   resources :users, only: [:edit, :show, :update]
+
+  authenticated :user do
+    root 'tribes#show'
+  end
+
+  root to: 'tribes#index'
 
 
 

@@ -3,10 +3,11 @@ class TribesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_tribe
   def index
-    redirect_to tribe_path(current_user.tribe) if current_user
+    # redirect_to tribe_path(current_user.tribe) if current_user
   end
 
   def show
+    @message = Message.new
     @new_user = User.new
   end
 

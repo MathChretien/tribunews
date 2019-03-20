@@ -7,21 +7,21 @@ const setAllButtonsInactive = () => {
   });
 };
 
-const saveLayoutToDB = (pageID, newLayoutNr) => {
-  console.log('updating for page:' + pageID);
-  const params = {
-    page_id: pageID,
-    page_layout: newLayoutNr
-  };
-  fetch("/change_layout", {
-    method: "POST",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(params)
-  });
-};
+// const saveLayoutToDB = (pageID, newLayoutNr) => {
+//   console.log('updating for page:' + pageID);
+//   const params = {
+//     page_id: pageID,
+//     page_layout: newLayoutNr
+//   };
+//   fetch("/change_layout", {
+//     method: "POST",
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(params)
+//   });
+// };
 
 const updatePageLayout = (layout_str) => {
   // console.log('updating: layout ==' + layout_str);
@@ -44,14 +44,24 @@ const layoutPickerInit = () => {
     button.addEventListener("click", (event) => {
       setAllButtonsInactive();
       event.currentTarget.classList.add('layout_active');
-      const layoutID = event.currentTarget.id;
+      const layoutID = event.currentTarget.dataset.layout;
       // console.log("layoutID" + layoutID);
-      const layout = layoutID.split('_')[2][1];
+      // const layout = layoutID.split('_')[2][1];
       // console.log("layout" + layout);
       const pageID = document.getElementById("picture_page_id").value;
       console.log("updating voor pageid:" + pageID);
-      saveLayoutToDB(pageID,layout);
-      window.location.reload(false);
+      // saveLayoutToDB(pageID,layout);
+      // window.location.reload(false);
+      let input_page = document.querySelector('#layout_picker_page_id');
+      let input_layout = document.querySelector('#layout_picker_page_layout');
+      input_page.value = pageID;
+      input_layout.value = layoutID;
+      console.log(input_page);
+      console.log(input_layout);
+      console.log(layoutID);
+      input_layout.parentElement.submit();
+
+
     });
   });
 };
