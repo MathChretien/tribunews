@@ -7,20 +7,20 @@
 }
 .sidebar {
   position: relative;
-  height: 1000px;
+  // height: 100vh;
   background-color: white;
 }
 .title-sidebar {
   display: flex;
-  height : 50px;
-  background-image: linear-gradient(to right, $tribu-green, $tribu-yellow);
+  padding: 30px;
+  background-image: linear-gradient(45deg, $tribu-green, $tribu-yellow);
   justify-content: center;
   align-items: center;
   text-color : white;
   h3 {
-    color: whitesmoke;
-    font-weight: 700;
-    font-size: 36px;
+    color: white;
+    font-weight: 300;
+    font-size: 30px;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
@@ -42,17 +42,13 @@
   display: inline-block;
   padding-top: 30px;
 }
-.button-sidebar li {
 
+.button-sidebar li {
   display: inline-flex;
-  border-color: $tribu-green;
   margin: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
   width: 260px;
   height: 70px;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   color: gray;
 
@@ -76,9 +72,9 @@
   border-radius: 6px;
   align-items: center;
   margin-top: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: $tribu-green;
+  // border-style: solid;
+  // border-width: 1px;
+  // border-color: $tribu-green;
   img {
     border-radius: 0px 0px 6px 6px;
     width: 100%;
@@ -92,11 +88,7 @@
   width : 700px;
   height : 225px;
   background-color : white;
-  border-color: $tribu-green;
   margin: 10px;
-  border-style: solid;
-  border-width: 1px;
-  text-align: center;
   border-radius: 6px;
   margin-top: 30px;
 }
@@ -132,16 +124,11 @@
   margin-top: 20px;
 }
 .member-list {
-  border-color: $tribu-green;
-  background-color: #eeeeee;
-  border-color: $tribu-green;
   padding-top: 15px;
   padding-right: 15px;
 }
 .member-select {
-  border-style: solid;
-  border-width: 1px;
-  border-color: $tribu-green;
+  padding:20px 20px;
   margin-top: 10px;
   margin-right: 10px;
   background-color: white;
@@ -155,15 +142,22 @@
     color: white;
   }
 }
+
+h2.title-dashboard {
+  margin-bottom: 12px;
+}
+
 .counter {
  text-align: center;
 }
+
 .description-counter li {
   list-style-type: none;
   display:inline;
   padding: 22px;
   color: $tribu-green;
 }
+
 #demo {
   font-size: 60px;
   color: $tribu-green;
@@ -188,17 +182,22 @@
 
 
 .member-container{
-  display:inline-flex;
-  width:100%;
-  padding: 15px;
+  display:flex;
+  // width:100%;
+  padding: 4px;
+
+
+  font-family: "Open Sans";
 }
 
 .avatar-dashboard{
   position: relative;
   padding: 8px 8px 0px 0px;
+
 }
 
 .member-status{
+
   position: relative;
   left: 29px;
   top: 10px;
@@ -211,7 +210,11 @@
 
 .member-info{
   padding: 10px 0px 0px 8px;
-  font-size:25px;
+  font-size: 20px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 // HERE IS CSS FOR MEMBER ACTION IN DISPLAY list
