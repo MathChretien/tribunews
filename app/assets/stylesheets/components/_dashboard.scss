@@ -23,6 +23,7 @@
   h3 {
     margin-top: 20px;
     color:white;
+    text-align: left;
   }
 }
 
@@ -39,6 +40,8 @@ margin-top:3em;
 
   .title-side-bar h3 {
     margin-top: 20px;
+    text-align: left;
+    margin-left: 30px;
   }
   .title-sidebar h3 {
     color:white;
@@ -58,19 +61,26 @@ margin-top:3em;
   list-style-type: none;
   display: inline-block;
   padding-top: 30px;
+  padding-left: 40px;
+  font-family: 'Open Sans';
+  font-size:16px;
+  color:black;
+  i {
+    padding-left: 10px;
+  }
 }
 
 .button-sidebar li {
   display: inline-flex;
-  margin: 10px;
+  margin: 2px 10px;
   width: 260px;
   height: 70px;
   // justify-content: center;
   align-items: center;
-  color: gray;
+  color: black;
 
   a {
-    color: gray;
+    color: black;
   }
 }
 .main-content-dashboard {
@@ -165,10 +175,14 @@ margin-top:3em;
 
 .title-dashboard {
   // color: $tribu-green;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   text-align: center;
   margin-top: 15px;
   a {
     color: white;
+    font-size:25px;
   }
 }
 
@@ -179,11 +193,7 @@ margin-top:3em;
   opacity: .95;
 }
 
-.chat-box {
-  height: 40vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
+
 
 #chatbox-element {
   height: 15vh;
@@ -198,7 +208,10 @@ h2.title-dashboard {
   padding: 20px;
   text-align: left;
   border-radius: 5px;
-  font-size:18px;
+  font-size:16px;
+  height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #container-chatbox {
   box-shadow: none !important;
@@ -262,11 +275,12 @@ h2.title-dashboard {
 // HERE IS CSS FOR MEMBER CARDS
 
 
-.member-container{
+.member-container {
   display:flex;
   // width:100%;
-  padding-left: 30px;
+  padding-left: 36px;
   font-family: "Open Sans";
+  font-size:12px;
 }
 
 .avatar-dashboard{
@@ -288,7 +302,7 @@ h2.title-dashboard {
 
 .member-info{
   padding: 10px 0px 0px 8px;
-  font-size: 20px;
+  font-size: 16px;
     display: flex;
   flex-direction: column;
   justify-content: center;
