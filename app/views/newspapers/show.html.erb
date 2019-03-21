@@ -19,10 +19,8 @@
 <div class="main-body newspaper-show">
   <div class="wrapper">
     <div class="library-pane">
-      <div class ="library-header">
-        <h3> <%= @tribe.name%> pictures </h3>
-      </div>
       <div class="library-byheader">
+
        <%= simple_form_for @new_picture do |f| %>
        <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
        <%= f.input :photo_cache, as: :hidden %>
@@ -30,7 +28,7 @@
        <%= f.hidden_field :page_layout, value: @page.layout%>
 
        <% end %>
-       <div id="nice_upload_button" class="nice_button">add new pictures</div>
+       <div id="nice_upload_button" class="nice_button">upload <%= @tribe.name%> pictures</div>
      </div>
      <div class = "library-content">
       <div class="pix-container" id="library">
@@ -51,9 +49,6 @@
    </div>
  </div>
  <div class="middle-pane">
-  <div class ="middle-header">
-    <h3>edit your pages</h3>
-  </div>
   <div class="middle-byheader">
     <div class="btn btn-lg" id="pages_number">
       <div class="num" style= "display: none"> <%= @page.number.to_i %> </div>
@@ -85,10 +80,8 @@
 </div>
 
 <div class="layout-pane">
-  <div class ="layout-header">
-    <h3>page layout</h3>
-  </div>
   <div class="layout-byheader">
+    <h3>layout</h3>
   </div>
   <div class="layout-content">
     <%= cl_image_tag("https://res.cloudinary.com/df0udw5lo/image/upload/v1553011484/layout_1.png", class:"layout_icon", id:"layout_icon_01", data: { layout:  1})%>
