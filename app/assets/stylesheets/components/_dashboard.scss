@@ -181,6 +181,8 @@ margin-top:3em;
 
 .chat-box {
   height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #chatbox-element {

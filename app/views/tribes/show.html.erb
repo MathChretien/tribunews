@@ -33,34 +33,35 @@
           <li> days  </li>
           <li> hours</li>
           <li> minutes</li>
-          <li> seconds</li> </div>
-        </div>
-        <div class="countdown-text">
-          before printing your family newspaper
+          <li> seconds</li>
         </div>
       </div>
-
-      <div class="action-edit">
-        <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
+      <div class="countdown-text">
+        before printing your family newspaper
       </div>
     </div>
 
-    <div class="member-select" id="chat-div">
-        <h3 class= "title-dashboard"> Tribe Chat </h3>
-        <div class="chat-box">
-          <% current_user.tribe.messages.each do |message| %>
-          <%= message.user.first_name %> :
-          <%= message.message %> <br>
-          <% end %>
-        </div>
-        <div class="chat-action">
-          <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
-          <%= f.label "New message" %>
-          <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
-          <%= f.button :submit, class:'btn btn-infos' %>
-          <% end %>
-        </div>
-      </div>
+    <div class="action-edit">
+      <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
+    </div>
   </div>
+
+  <div class="member-select" id="chat-div">
+    <h3 class= "title-dashboard"> Tribe Chat </h3>
+    <div class="chat-box">
+      <% current_user.tribe.messages.order("created_at ASC").each do |message| %>
+      <%= message.user.first_name %> :
+      <%= message.message %> <br>
+      <% end %>
+    </div>
+    <div class="chat-action">
+      <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
+      <%= f.label "New message" %>
+      <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
+      <%= f.button :submit, class:'btn btn-infos' %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
