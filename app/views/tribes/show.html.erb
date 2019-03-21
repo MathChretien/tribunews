@@ -6,16 +6,15 @@
     </div>
     <div class="action-sidebar">
       <div class="button-sidebar">
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %>  </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %></li>
+        <li>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> <i class="fas fa-users"> </i></li>
+        <li>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %> <i class="fas fa-users">  </i></li>
+        <li>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %> <i class="fas fa-users"> </i></li>
       </div>
     </div>
   </div>
   <div class="main-content-dashboard">
 
     <div class="tribe-avatar">
-      <h2>Tribu's Picture</h2>
       <%= cl_image_tag @tribe.photo%>
     </div>
     <div class="countdown">
@@ -34,7 +33,7 @@
       </div>
 
       <div class="action-edit">
-        <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper' , newspapers_show_path  %></h2>
+        <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
       </div>
     </div>
     <div class="member-list">
@@ -56,8 +55,9 @@
           <% end %>
           </div>
           <div class="chat-action">
-            <%= simple_form_for @message do |f| %>
-            <%= f.input :message, as: :text %>
+            <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
+            <%= f.label "New message" %>
+            <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
             <%= f.button :submit, class:'btn btn-infos' %>
             <% end %>
           </div>
