@@ -8,6 +8,7 @@
 .sidebar {
   position: relative;
   // height: 100vh;
+
   background-color: white;
 }
 .title-sidebar {
@@ -29,8 +30,6 @@
 
 .action-sidebar {
   display: flex;
-
-  height : 950px;
   background-color: white;
   justify-content: center;
 }
@@ -60,7 +59,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 1000px;
   align-items: center;
   background-color : #eeeeee;
   padding: 15px;
@@ -131,8 +129,10 @@
   padding:20px 20px;
   margin-top: 10px;
   margin-right: 10px;
+  margin-bottom: 20px;
   background-color: white;
   border-radius: 6px;
+  width: 375px;
 }
 .title-dashboard {
   color: $tribu-green;
@@ -142,9 +142,33 @@
     color: white;
   }
 }
+d
 
 h2.title-dashboard {
   margin-bottom: 12px;
+}
+
+.chat-box {
+  margin: 20px;
+  padding: 20px;
+  text-align: left;
+  border-radius: 5px;
+}
+#container-chatbox {
+  box-shadow: none !important;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+#chatbox-element {
+  box-shadow: none;
+}
+
+.form-group.text.optional.message_message {
+  box-shadow: none;
+}
+.form-control-label {
+  margin-left: 20px;
 }
 
 .counter {
