@@ -8,21 +8,32 @@
 
 
 puts "generating tribe"
-griffins = Tribe.create!(name: 'the griffins',
-  address:'saint-gilles, belgium',
-  description:"we love our family.  except meg.",
-  subscribed_on: Date.new(2018,02,01))
-
-puts "generating user(s)"
-stewie = User.create!(first_name:'stewie', last_name:'griffin', password:'stewieg', tribe: griffins, email:'stewie@gmail.com')
-peter = User.create!(first_name:'peter', last_name:'griffin', password:'peterg', tribe: griffins, email:'peter@gmail.com')
+  peeters = Tribe.create!(name: 'Peeters Family',
+  address:'Saint-Gilles, Belgium',
+  description:"We Love our Family ! ",
+  subscribed_on: Date.new(2018,02,01),
+  remote_photo_url: "https://res.cloudinary.com/df0udw5lo/image/upload/v1553102723/mvfpkfeimx1bjnimsdd1.jpg")
 
 puts "generating newspaper"
-paper = Newspaper.create!(published_on: Date.new(2018,03,01), tribe:griffins)
-
 puts "generating pages"
-6.times do |time|
-  Page.create!(layout:1, newspaper: paper)
-end
+
+  newspaper = Newspaper.create(published_on: Date.today.end_of_month, tribe_id: 1)
+    (1..12).each do |number|
+      if number == 1
+        var_page = newspaper.pages.create(number: number.to_s, layout: "0")
+      else
+      var_page = newspaper.pages.create(number: number.to_s, layout: "3")
+    end
+      9.times do |box|
+        var_page.boxes.create
+      end
+      var_page.boxes.create(category: "text")
+    end
 
 
+
+puts "generating user(s)"
+carole = User.create!(first_name:'Carole', last_name:'Peeters', password:'carole', tribe_id: 1, email:'carole@gmail.com', remote_photo_url: "https://res.cloudinary.com/df0udw5lo/image/upload/v1553102583/vsv5gzlx929um2ekn3fp.jpg" )
+thomas = User.create!(first_name:'Thomas', last_name:'Peeters', password:'thomas', tribe_id: 1, email:'thomas@gmail.com', remote_photo_url: "https://res.cloudinary.com/df0udw5lo/image/upload/v1553102620/purwzgooqkqqgyqyqkxj.png")
+nathalie = User.create!(first_name:'Nathalie', last_name:'Dubois', password:'nathalie', tribe_id: 1, email:'nathalie@gmail.com',remote_photo_url:"https://res.cloudinary.com/df0udw5lo/image/upload/v1553102655/t2wy9qjeml6dzcvynuq2.jpg" )
+bob = User.create!(first_name:'Bob', last_name:'Dubois', password:'bobbob', tribe_id: 1, email:'bob@gmail.com', remote_photo_url: "https://res.cloudinary.com/df0udw5lo/image/upload/v1553102692/csl6xtpfgevrnxiqyhki.jpg")
