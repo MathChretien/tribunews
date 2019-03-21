@@ -1,7 +1,7 @@
 const countdownInit = () => {
   if(document.getElementById("demo")){
 // Set the date we're counting down to
-let countDownDate = new Date("March 31, 2019 23:59:59").getTime();
+let countDownDate = new Date("March 22, 2019 21:29:59").getTime();
 
 // Update the count down every 1 second
 const x = setInterval(function() {
