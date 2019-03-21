@@ -1,4 +1,4 @@
-class NewspapersController < ApplicationController
+  class NewspapersController < ApplicationController
   layout 'pdf', only: :pdf
   skip_before_action :verify_authenticity_token
 
@@ -21,19 +21,15 @@ class NewspapersController < ApplicationController
     @pic_boxes = get_boxes(@page, :pic)
     @text_boxes = get_boxes(@page, :text)
 
-    # respond_to do |format|
-    #   format.js
-    #   format.html
-    # end
      respond_to  do |format|
       format.html
       format.pdf do
-                   render pdf: "titre newspaper",
+                   render pdf: "test newspaper",
                    page_size: 'A4',
                    template: "newspapers/pdf.html.erb",
                    layout: "pdf.html",
                    lowquality: true,
-                  zoom: 1,
+                   zoom: 1,
                    dpi: 75
                end
       end

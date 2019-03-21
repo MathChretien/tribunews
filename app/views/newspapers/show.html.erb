@@ -50,9 +50,12 @@
          </div>
        </div>
      </div>
+
+
      <div class="middle-pane">
       <div class ="middle-header">
         <h3>edit your pages</h3>
+        <%= link_to 'Create PDF document', newspapers_show_path(@pdf, :format => :pdf) %>
       </div>
       <div class="middle-byheader">
         <div class="btn btn-lg" id="pages_number">
