@@ -56,8 +56,9 @@
           <% end %>
           </div>
           <div class="chat-action">
-            <%= simple_form_for @message do |f| %>
-            <%= f.input :message, as: :text %>
+            <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
+            <%= f.label "New message" %>
+            <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
             <%= f.button :submit, class:'btn btn-infos' %>
             <% end %>
           </div>
