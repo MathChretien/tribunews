@@ -3,7 +3,7 @@
 .structure {
   display: grid;
   text-align: center;
-  grid-template-columns: 300px auto 400px;
+  grid-template-columns: 300px auto;
 }
 .sidebar {
   position: relative;
@@ -13,20 +13,38 @@
 }
 .title-sidebar {
   display: flex;
-  padding: 30px;
+  padding: 20px;
   background-image: linear-gradient(45deg, $tribu-green, $tribu-yellow);
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   text-color : white;
+  margin-bottom:2em;
+  margin-top:3em;
   h3 {
-    color: white;
+    margin-top: 20px;
+    color:white;
+  }
+}
+
+#tribe_name {
+margin-top:3em;
+}
+.dashboard h3  {
     font-weight: 300;
-    font-size: 30px;
+    font-size: 28px;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
   }
-}
+
+  .title-side-bar h3 {
+    margin-top: 20px;
+  }
+  .title-sidebar h3 {
+    color:white;
+  }
+
+
 
 .action-sidebar {
   display: flex;
@@ -56,13 +74,24 @@
   }
 }
 .main-content-dashboard {
+  min-height:88vh;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   text-align: center;
   align-items: center;
   background-color : #eeeeee;
   padding: 15px;
 }
+
+.dashboard-middle {
+  flex: 1 1 auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height:70vh;
+}
+
 .tribe-avatar {
   display: flex;
   flex-direction: column;
@@ -83,12 +112,12 @@
   }
 }
 .countdown {
-  width : 700px;
-  height : 225px;
-  background-color : white;
-  margin: 10px;
-  border-radius: 6px;
-  margin-top: 30px;
+  // width : 700px;
+  // height : 225px;
+  // background-color : white;
+  // margin: 10px;
+  // border-radius: 6px;
+  // margin-top: 30px;
 }
 .title-dashboard-button {
   background-color: $tribu-green;
@@ -103,10 +132,10 @@
   font-weight: bold;
   display: inline-block;
   padding: 8px;
-  background-color: white;
-  color: $tribu-green;
+  // background-color: white;
+  color: white;
   text-align: center;
-  text-decoration: underline;
+  // text-decoration: underline;
   border-radius: 6px;
   margin-top: 21px;
   text-align: center;
@@ -125,24 +154,38 @@
   padding-top: 15px;
   padding-right: 15px;
 }
+
 .member-select {
-  padding:20px 20px;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  // padding:20px 20px;
+  // flex: 1 0 35%;
   background-color: white;
   border-radius: 6px;
-  width: 375px;
+  // width: 375px;
 }
+
 .title-dashboard {
-  color: $tribu-green;
+  // color: $tribu-green;
   text-align: center;
   margin-top: 15px;
   a {
     color: white;
   }
 }
-d
+
+#chat-div {
+  padding: 35px 20px;
+  width: 400px;
+  margin-right:2em;
+  opacity: .95;
+}
+
+.chat-box {
+  height: 40vh;
+}
+
+#chatbox-element {
+  height: 15vh;
+}
 
 h2.title-dashboard {
   margin-bottom: 12px;
@@ -153,6 +196,7 @@ h2.title-dashboard {
   padding: 20px;
   text-align: left;
   border-radius: 5px;
+  font-size:18px;
 }
 #container-chatbox {
   box-shadow: none !important;
@@ -173,18 +217,29 @@ h2.title-dashboard {
 
 .counter {
  text-align: center;
+ font-family: "Orbitron";
+ font-weight: 500;
+}
+
+.description-counter {
+  margin-left:10px;
 }
 
 .description-counter li {
   list-style-type: none;
   display:inline;
-  padding: 22px;
-  color: $tribu-green;
+  padding: 30px;
+  color: white;
+  font-size:20px;
+  text-align:left;
+  margin:0;
 }
 
 #demo {
-  font-size: 60px;
-  color: $tribu-green;
+  font-size: 80px;
+  color: white;
+  text-align:left;
+  font-weight:600;
 }
 .add-button {
   background-color: $tribu-green;
@@ -208,9 +263,7 @@ h2.title-dashboard {
 .member-container{
   display:flex;
   // width:100%;
-  padding: 4px;
-
-
+  padding-left: 30px;
   font-family: "Open Sans";
 }
 
@@ -227,7 +280,6 @@ h2.title-dashboard {
   top: 10px;
   background-color:red;
   border-radius:50px;
-
   width:10px;
   height:10px;
 }
@@ -244,7 +296,7 @@ h2.title-dashboard {
 // HERE IS CSS FOR MEMBER ACTION IN DISPLAY list
 
 .action-container{
-
+  margin-top:2.5em;
 }
 
 .invite {
@@ -255,4 +307,10 @@ h2.title-dashboard {
 
 .search{
   display:inline-block;
+}
+
+#chatbox-element {
+  padding: 8px;
+  font-size:20px;
+  font-weight:normal;
 }
