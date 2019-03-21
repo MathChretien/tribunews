@@ -44,7 +44,9 @@ class NewspapersController < ApplicationController
     newspaper = tribe.newspapers.last
     @pic = newspaper.pictures.find(params[:id].to_i)
     @pic.destroy
-    redirect_to newspapers_show_path
+    # redirect_to newspapers_show_path(page_number: params[:page_number])
+    redirect_back fallback_location: "newspapers/show?page_number=@page"
+
   end
 
   def pdf
