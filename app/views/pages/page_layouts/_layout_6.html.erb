@@ -5,16 +5,18 @@
       <% if @pic_boxes[0].nil? %>
 
       <% else %>
-      <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:250, height: 320, id:"cl_06_01") %>
+          <%= image_tag @pic_boxes[0].picture.photo.url(:layout_06) %>
+
       <%end%>
     </div>
 
 
-    <div class="photo-box pic photobook_pic" id="box_06_02" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[1].id%>" data-id="<%= @pic_boxes[1].try(:picture).try(:id) %>">
+    <div class="photo-box pic photobook_pic" id="box_06_02" data-chosen="true" data-boxes="true" data-box -number="<%= @page.boxes.order("id ASC")[1].id%>" data-id="<%= @pic_boxes[1].try(:picture).try(:id) %>">
      <% if @pic_boxes[1].nil? %>
 
      <% else %>
-     <%= cl_image_tag(@pic_boxes[1].picture.photo, crop: :fill, gravity: :face, width:250, height: 320, id:"cl_06_02") %>
+          <%= image_tag @pic_boxes[1].picture.photo.url(:layout_06) %>
+
      <%end%>
    </div>
  </div>
@@ -32,7 +34,8 @@
     <% if @pic_boxes[2].nil? %>
 
     <% else %>
-    <%= cl_image_tag(@pic_boxes[2].picture.photo, crop: :fill, gravity: :face, width:250, height: 320, id:"cl_06_03") %>
+          <%= image_tag @pic_boxes[2].picture.photo.url(:layout_06) %>
+
     <%end%>
   </div>
 
@@ -41,7 +44,8 @@
    <% if @pic_boxes[3].nil? %>
 
    <% else %>
-   <%= cl_image_tag(@pic_boxes[3].picture.photo, crop: :fill, gravity: :face, width:250, height: 320, id:"cl_06_04") %>
+          <%= image_tag @pic_boxes[3].picture.photo.url(:layout_06) %>
+
    <%end%>
  </div>
 </div>

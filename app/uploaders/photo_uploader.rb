@@ -14,16 +14,43 @@ class PhotoUploader < CarrierWave::Uploader::Base
     cloudinary_transformation gravity: :face, width: 300, crop: :thumb, zoom: 0.2, height: 250
   end
 
+  version :layout_01 do
+    cloudinary_transformation gravity: :face, width: 500, height: 700, crop: :fill, zoom: 0.1
+  end
+
+  version :layout_01_fx do
+    cloudinary_transformation transformation: [{gravity: :face, width: 500, height: 700, crop: :fill, zoom: 0.1},
+    {effect: "art:fes", opacity:80}, {effect: "gradient_fade:.05,y_-0.1,b_black"}]
+  end
+
+  version :layout_02 do
+    cloudinary_transformation gravity: :face, width: 500, height: 550, crop: :fill, zoom: 0.1
+  end
+
+  version :layout_03 do
+    cloudinary_transformation gravity: :face, width: 500, height: 380, crop: :fill, zoom: 0.1
+  end
+
+  version :layout_04 do
+    cloudinary_transformation gravity: :face, width: 500, height: 380, crop: :fill, zoom: 0.1
+  end
+
+  version :layout_05 do
+    cloudinary_transformation gravity: :face, width: 250, height: 320, crop: :thumb, zoom: 0.1
+  end
+
+  version :layout_06 do
+    cloudinary_transformation gravity: :face, width: 240, height: 320, crop: :thumb, zoom: 0.05
+  end
+
+
+
   # -------
   version :bright_face do
     cloudinary_transformation effect: "brightness:30", radius: 20,
     gravity: :face
   end
 
-  version :fes do
-    cloudinary_transformation effect: "fes:30", radius: 80,
-    gravity: :face
-  end
 
 
 end

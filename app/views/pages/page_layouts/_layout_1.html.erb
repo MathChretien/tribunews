@@ -2,7 +2,7 @@
   <div class="box pic photobook_pic" id="box_01_01" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[0].id%>" data-id="<%= @pic_boxes[0].try(:picture).try(:id) %>">
     <% if @pic_boxes[0].nil? %>
     <% else %>
-    <%= cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, width:500, height: 700, id:"cl_01_01") %>
+    <%= image_tag @pic_boxes[0].picture.photo.url(:layout_01_fx) %>
     <% end %>
   </div>
 </div>
