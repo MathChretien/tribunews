@@ -1,8 +1,8 @@
 <div class = "dashboard structure">
 
   <div class="sidebar">
-    <div class="title-sidebar">
-      <h3><%= @tribe.name%></h3>
+    <div class="title-side-bar" id="tribe_name">
+      <h3 id="tribename_h3"><%= @tribe.name%></h3>
     </div>
     <div class="action-sidebar">
       <div class="button-sidebar">
@@ -11,12 +11,20 @@
         <li>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %> <i class="fas fa-users"> </i></li>
       </div>
     </div>
-  </div>
-  <div class="main-content-dashboard">
-
-    <div class="tribe-avatar">
-      <%= cl_image_tag @tribe.photo%>
+    <div class="member-select">
+      <div class="title-sidebar">
+        <h3>your tribe members</h3>
+      </div>
+      <% current_user.tribe.users.each do |user| %>
+      <%= render  'share/member-tag', user: user %>
+      <% end %>
+      <%= render  'share/member-action', user: @user %>
     </div>
+  </div>
+  <div class="main-content-dashboard"
+  style='background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.2)), url(<%= @tribe.photo %>); background-size: cover; background-position:center'>
+
+  <div class="dashboard-middle">
     <div class="countdown">
       <h2 class= "title-dashboard"> </h2>
       <div class="counter">
@@ -36,33 +44,23 @@
         <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
       </div>
     </div>
-    <div class="member-list">
-      <div class="member-select">
-        <h2 class= "title-dashboard"> Members of your Tribe </h2>
-        <%= render  'share/member-action', user: @user %>
-        <% current_user.tribe.users.each do |user| %>
-        <%= render  'share/member-tag', user: user %>
-        <% end %>
-      </div>
 
-      <div class="member-list">
-        <div class="member-select">
-          <h2 class= "title-dashboard"> Tribe Chat </h2>
-          <div class="chat-box">
+    <div class="member-select" id="chat-div">
+        <h3 class= "title-dashboard"> Tribe Chat </h3>
+        <div class="chat-box">
           <% current_user.tribe.messages.each do |message| %>
           <%= message.user.first_name %> :
           <%= message.message %> <br>
           <% end %>
-          </div>
-          <div class="chat-action">
-            <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
-            <%= f.label "New message" %>
-            <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
-            <%= f.button :submit, class:'btn btn-infos' %>
-            <% end %>
-          </div>
+        </div>
+        <div class="chat-action">
+          <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
+          <%= f.label "New message" %>
+          <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
+          <%= f.button :submit, class:'btn btn-infos' %>
+          <% end %>
         </div>
       </div>
+  </div>
 
-    </div>
 
