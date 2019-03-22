@@ -48,7 +48,6 @@
 }
 
 
-
 .action-sidebar {
   display: flex;
   background-color: white;
@@ -230,12 +229,16 @@ h2.title-dashboard {
 
 .description-counter {
   margin-left:10px;
+  text-align:left;
+  padding-left:0;
 }
 
 .description-counter li {
   list-style-type: none;
   display:inline;
   padding: 30px;
+  padding-left:5px;
+  padding-right:68px;
   color: white;
   font-size:20px;
   text-align:left;
