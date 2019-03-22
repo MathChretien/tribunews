@@ -1,4 +1,4 @@
-<div class="layout" id="layout_title">
+<div class="layout_title" id="layout_title">
   <div id="box_layout_title">
     <div id="box_00_01"%>
       <% if @newspaper.pages[current_page].boxes.order("id ASC")[0].picture.nil? %>
@@ -7,7 +7,7 @@
 <!--        cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, id:"cl_00  _01", class: "layout0-image") -->
       <% end %>
       <div id="layout_title_logo">
-      <%= wicked_pdf_image_tag "https://res.cloudinary.com/df0udw5lo/image/upload/v1553184780/nzzscwqsgxu5pifwpcam.png" %>
+  <%= wicked_pdf_image_tag "TRIBU_Logo_gradient_web_with_alpha.png" , width: '200px', height: '200px' , class: 'logo-img' %>
       </div>
     </div>
     <div class = "layout_title_foreground">

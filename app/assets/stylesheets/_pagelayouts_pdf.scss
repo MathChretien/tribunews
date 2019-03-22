@@ -1,9 +1,39 @@
 
 .layout {
-  padding: 30px 10px;
-  height: 860px;
-  width: 570px;
+  // padding: 0px 0px;
+  // height: 860px;
+  // width: 570px;
   // border: solid 1px green;
+  //  margin-left: 40px;
+  // margin-top: 80px;
+}
+
+#layout_title, #layout_00 {
+  padding:0 0;
+  color:white;
+}
+
+#box_layout_title {
+    // height:700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align:center;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background: linear-gradient(217deg, hsla(175, 2%, 5%, 0.3), hsla(172, 50%, 26%, .8));
+    }
+
+#box_00_01 {
+      padding:0;
+      // height:100% !important;
+      height: 858px;
+    }
+
+#box_01_01 {
+  width:500px;
+  height:700px;
 }
 
 .photo-box {
@@ -27,6 +57,7 @@
 }
 
 .photobook_pic {
+
   background: linear-gradient(217deg, hsla(175, 2%, 10%, 0.3), rgba(0, 185, 160, 0.1));
   margin: 8px;
   // margin-right: 12px;
@@ -35,31 +66,7 @@
 
 
 
-#layout_title, #layout_00 {
-  padding:0 0;
-  color:white;
-}
 
-
-#box_layout_title {
-    // height:700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align:center;
-    position:relative;
-    margin:0;
-    padding:0;
-    height:860px;
-    overflow: hidden;
-    background: linear-gradient(217deg, hsla(175, 2%, 5%, 0.3), hsla(172, 50%, 26%, .8));
-
-    // width:550px;
-    // width:
-
-    .tribe-name{
-      // margin-top:400px;
-    }
 
 
     h1 {
@@ -79,13 +86,7 @@
       font-size:20px;
     }
 
-    #box_00_01 {
-      margin:0;
-      padding:0;
-      // height:100% !important;
-      height: 858px;
-    }
-  }
+
 
   .layout_title_foreground {
     position: absolute;
@@ -95,7 +96,7 @@
   }
   .layout0-image {
     // overflow: hidden;
-    height: 858px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -115,10 +116,6 @@
  padding: 60px 0;
 }
 
-#box_01_01 {
-  width:500px;
-  height:700px;
-}
 
   // ---layout 2
   #layout_02 {

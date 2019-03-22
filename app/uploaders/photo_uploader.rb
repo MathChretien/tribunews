@@ -10,6 +10,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     ]
   end
 
+
   version :thumbnail do
     cloudinary_transformation gravity: :face, width: 250, crop: :thumb, zoom: 0.2, height: 200
   end
