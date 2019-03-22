@@ -7,18 +7,20 @@
     <div class="action-sidebar">
       <div class="button-sidebar">
         <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %> </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %> </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My account', edit_user_registration_path %> </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Edit newspaper", newspapers_show_path %> </li>
       </div>
     </div>
     <div class="member-select">
       <div class="title-sidebar">
-        <h3>your tribe members</h3>
+        <h3>Your tribe members</h3>
       </div>
       <% current_user.tribe.users.each do |user| %>
-      <%= render  'share/member-tag', user: user %>
+        <% if !user.last_name.nil? %>
+          <%= render 'share/member-tag', user: user %>
+        <% end %>
       <% end %>
-      <%= render  'share/member-action', user: @user %>
+      <%= render 'share/member-action', user: @user %>
     </div>
   </div>
   <div class="main-content-dashboard"
@@ -42,12 +44,12 @@
     </div>
 
     <div class="action-edit">
-      <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
+      <h2 class= "title-dashboard" id="edit-button"><%=  link_to 'Edit your family newspaper', newspapers_show_path  %></h2>
     </div>
   </div>
 
   <div class="member-select" id="chat-div">
-    <h3 class= "title-dashboard"> Tribe Chat </h3>
+    <h3 class= "title-dashboard"> Tribe chat </h3>
     <div class="chat-box">
       <% current_user.tribe.messages.order("created_at ASC").each do |message| %>
       <%= message.user.first_name %> :
@@ -56,9 +58,8 @@
     </div>
     <div class="chat-action">
       <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
-      <%= f.label "New message" %>
       <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
-      <%= f.button :submit, class:'btn btn-infos' %>
+      <%= f.button :submit, value:'Write message', class:'btn btn-infos' %>
       <% end %>
     </div>
   </div>

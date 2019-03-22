@@ -7,7 +7,7 @@
 }
 .sidebar {
   position: relative;
-  // height: 100vh;
+  // hemin-ight: 100vh;
 
   background-color: white;
 }
@@ -28,24 +28,24 @@
 }
 
 #tribe_name {
-margin-top:3em;
+  margin-top:3em;
 }
 .dashboard h3  {
-    font-weight: 300;
-    font-size: 28px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
+  font-weight: 300;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 
-  .title-side-bar h3 {
-    margin-top: 20px;
-    text-align: left;
-    margin-left: 30px;
-  }
-  .title-sidebar h3 {
-    color:white;
-  }
+.title-side-bar h3 {
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 30px;
+}
+.title-sidebar h3 {
+  color:white;
+}
 
 
 
@@ -74,7 +74,7 @@ margin-top:3em;
   display: inline-flex;
   margin: 2px 10px;
   width: 260px;
-  height: 70px;
+  height: 60px;
   // justify-content: center;
   align-items: center;
   color: black;
@@ -84,7 +84,7 @@ margin-top:3em;
   }
 }
 .main-content-dashboard {
-  min-height:88vh;
+  min-min-height:80vh;
   display: flex;
   // flex-direction: column;
   text-align: center;
@@ -99,7 +99,7 @@ margin-top:3em;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height:70vh;
+  min-height:70vh;
 }
 
 .tribe-avatar {
@@ -151,15 +151,7 @@ margin-top:3em;
   text-align: center;
   align-items: center;
 }
-.action-edit {
-  width : 500px;
-  height : 70px;
-  background-color : $tribu-green;
-  margin: 10px;
-  border-radius: 8px;
-  color: white;
-  margin-top: 20px;
-}
+
 .member-list {
   padding-top: 15px;
   padding-right: 15px;
@@ -193,14 +185,14 @@ margin-top:3em;
   opacity: .95;
 }
 
-
-
 #chatbox-element {
-  height: 15vh;
+  hmin-eight: 15vh;
 }
 
 h2.title-dashboard {
   margin-bottom: 12px;
+  padding:0;
+  margin:0;
 }
 
 .chat-box {
@@ -209,7 +201,7 @@ h2.title-dashboard {
   text-align: left;
   border-radius: 5px;
   font-size:16px;
-  height: 40vh;
+  hmin-eight: 40vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -281,12 +273,12 @@ h2.title-dashboard {
   padding-left: 36px;
   font-family: "Open Sans";
   font-size:12px;
+  height:50px;
 }
 
-.avatar-dashboard{
+.avatar-dashboard {
   position: relative;
-  padding: 8px 8px 0px 0px;
-
+  padding: 2px 8px 0px 0px;
 }
 
 .member-status{
@@ -300,10 +292,15 @@ h2.title-dashboard {
   height:10px;
 }
 
+
+.member-status-green {
+  background-color: $tribu-green;
+}
+
 .member-info{
   padding: 10px 0px 0px 8px;
   font-size: 16px;
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 
@@ -330,3 +327,30 @@ h2.title-dashboard {
   font-size:20px;
   font-weight:normal;
 }
+
+#add-user-button {
+  width: 100%;
+  padding: 15px 30px;
+}
+
+.btn-success, .btn-infos {
+  background-color: #73C696 !important;
+  padding: 0.5em 2em !important;
+}
+
+.action-edit {
+  background-color: #73C696 !important;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0.70em;
+  margin: 10px;
+  border-radius: 4px;
+  color: white;
+  margin-top: 20px;
+  a {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
