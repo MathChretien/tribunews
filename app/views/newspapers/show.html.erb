@@ -55,6 +55,7 @@
       <h3 id = "num-change-page"> Page n°<%= @page.number.to_i %></h3>
     </div>
     <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i>
+       <%= link_to 'Create PDF document', newspapers_show_path(@pdf, :format => :pdf) %>
     </div>
   </div>
   <div class="middle-content">
@@ -66,15 +67,16 @@
     <div class="edit-pane">
       <div class="page-edition">
         <%= render "pages/show" %>
+
       </div>
 
     </div>
     <div class="page-forward">
       <%= link_to newspapers_show_path(page_number: @page.number.to_i + 1) do %>
-
       <!-- here i could work with a form that does a submit, via js changepage.js -->
       <div class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></div>
       <% end %>
+
     </div>
   </div>
 </div>

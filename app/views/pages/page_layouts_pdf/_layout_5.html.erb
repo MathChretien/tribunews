@@ -1,0 +1,40 @@
+<div class="layout" id="layout_05">
+
+  <div class="picture_row">
+    <div class="photo-box pic photobook_pic" id="box_05_01_pdf" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[0].id%>" data-id="<%= @pic_boxes[0].try(:picture).try(:id) %>">
+      <% if @newspaper.pages[current_page].boxes.order("id ASC")[0].picture.nil? %>
+      <% else %>
+      <%= image_tag @newspaper.pages[current_page].boxes.order("id ASC")[0].picture.photo.url(:layout_05) %>
+      <%end%>
+    </div>
+
+    <div class="photo-box pic photobook_pic" id="box_05_02_pdf" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[1].id%>" data-id="<%= @pic_boxes[1].try(:picture).try(:id) %>">
+     <% if @newspaper.pages[current_page].boxes.order("id ASC")[1].picture.nil? %>
+     <% else %>
+     <%= image_tag @newspaper.pages[current_page].boxes.order("id ASC")[1].picture.photo.url(:layout_05) %>
+     <%end%>
+   </div>
+ </div>
+
+ <div class="picture_row">
+
+   <div class="photo-box pic photobook_pic" id="box_05_03_pdf" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[2].id%>" data-id="<%= @pic_boxes[2].try(:picture).try(:id) %>">
+    <% if @newspaper.pages[current_page].boxes.order("id ASC")[2].picture.nil? %>
+    <% else %>
+    <%= image_tag @newspaper.pages[current_page].boxes.order("id ASC")[2].picture.photo.url(:layout_05) %>
+    <%end%>
+  </div>
+
+
+  <div class="photo-box pic photobook_pic" id="box_05_04_pdf" data-chosen="true" data-boxes="true" data-box-number="<%= @page.boxes.order("id ASC")[3].id%>" data-id="<%= @pic_boxes[3].try(:picture).try(:id) %>">
+   <% if @newspaper.pages[current_page].boxes.order("id ASC")[3].picture.nil? %>
+   <% else %>
+   <%= image_tag @newspaper.pages[current_page].boxes.order("id ASC")[3].picture.photo.url(:layout_05) %>
+   <%end%>
+ </div>
+</div>
+</div>
+
+
+<!-- cl_image_tag("v1552513403/vwv18yb112kphdpkb8xk.jpg", id:"cl_02_01") ==> TO TEST -->
+
