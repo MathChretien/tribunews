@@ -6,10 +6,11 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <% if user_signed_in? %>
+
     <%= link_to 'Your tribe', edit_tribe_path(current_user.tribe),class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Edit newspaper", newspapers_show_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <% if user_signed_in? %>
 
     <!-- Links when logged in -->
     <!-- TODO LINK TO USER EDIT -->
