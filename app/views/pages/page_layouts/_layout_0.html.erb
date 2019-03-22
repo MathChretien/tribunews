@@ -7,8 +7,7 @@
 <!--        cl_image_tag(@pic_boxes[0].picture.photo, crop: :fill, gravity: :face, id:"cl_00  _01", class: "layout0-image") -->
       <% end %>
 
-      <%= image_tag "TRIBU_Logo_gradient_web_with_alpha.png", height: 50, width:75, id:"layout_title_logo"%>
-    </div>
+      <%= image_tag "TRIBU_Logo_gradient_web_with_alpha.png", height: 50, width: 75, id:"layout_title_logo"%>
     <div class = "layout_title_foreground">
       <div class="tribe-name">
         <h2>our monthly</h2>
@@ -18,6 +17,7 @@
       <div class="month">
         <%=@newspaper.published_on.strftime("%B %Y")%>
       </div>
+    </div>
     </div>
   </div>
 </div>
