@@ -1,46 +1,43 @@
  <div class="action-container">
   <div class="invite">
-    <button type="button" class="btn btn-success add-button" data-toggle="modal" data-target="#modalLoginForm"> <i class="fas fa-plus"></i></button>
-  </div>
-  <div class="search">
-    <input type="text" placeholder="search" class='form-control'>
+    <button type="button" class="btn btn-success add-button" data-toggle="modal" data-target="#modalLoginForm" id="add-user-button"> <i class="fas fa-plus" style="margin-right:5px;"></i> Invite family member</button>
   </div>
 </div>
 
 
 
 <div class="modal fade" id="modalLoginForm" tabindex="1" role="dialog"
-     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div>
+      <%= form_for( @new_user, url: user_invitation_path,
+      html: { id:"form_new_user"}) do |f|%>
+
+      <h4 style="margin-bottom: 6%;">
+        Invite your Tribe
+      </h4>
+
+      <%= f.hidden_field :tribe_id, value: current_user.tribe.id %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: "email", as: :email,
+        label:false,  id: "text_font_form_1",
+        class: "form-control", required: true %>
       </div>
-      <div>
-        <%= form_for( @new_user, url: user_invitation_path,
-                      html: { id:"form_new_user"}) do |f|%>
-
-          <h4 style="margin-bottom: 6%;">
-            Invite your Tribe
-          </h4>
-
-          <%= f.hidden_field :tribe_id, value: current_user.tribe.id %>
-          <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, placeholder: "email", as: :email,
-                               label:false,  id: "text_font_form_1",
-                               class: "form-control", required: true %>
-          </div>
 
 
-          <div class="text-center" style="padding: 5%;">
-            <%= f.submit "Invite", class: "btn btn-primary" %>
-          </div>
-
-        <% end %>
+      <div class="text-center" style="padding: 5%;">
+        <%= f.submit "Invite", class: "btn btn-primary" %>
       </div>
+
+      <% end %>
     </div>
   </div>
+</div>
 </div>

@@ -51,9 +51,27 @@
   align-items: center;
 }
 
+.buttons-right {
+  position: absolute;
+  right: 10px;
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
+    height:32px;
 
+  a {
+    color:white;
+    padding: 0;
+  }
+}
+
+#btn_create_pdf {
+  height:32px;
+}
 .nice_button {
-  padding: 3px 30px;
+    height:32px;
+
+  padding: 0px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +79,8 @@
   border-radius: 5px;
   box-shadow: 6px 4px 10px -1px rgba(0,0,0,0.4);
   background-color: rgba(20,20,20,.7);
+  margin-left:5px;
+  margin-right:5px;
   &:hover {
     // pointer-events: auto;
     cursor: pointer;
@@ -71,9 +91,6 @@
 .nice_button#btn_fullscreen{
   padding:5px;
   font-size:24px;
-  margin-right:10px;
-  position:absolute;
-  right: 10px;
 }
 
 .library-byheader, .middle-byheader, .layout-byheader {
@@ -195,28 +212,28 @@
 }
 
 .layout-content {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-content:center;
-    padding-left:20%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  padding-left:20%;
 
-    .layout_icon {
-      display:block;
-      margin: 20px;
-      height: 110px;
-      width: 75px;
-      opacity: .95;
-      filter: invert(80%) saturate(2000%) hue-rotate(-20deg);
-    }
-
-    .layout_active {
-      filter: none;
-    }
-
-    .unvisible {
-      visibility: hidden;
-    }
-
-
+  .layout_icon {
+    display:block;
+    margin: 20px;
+    height: 110px;
+    width: 75px;
+    opacity: .95;
+    filter: invert(80%) saturate(2000%) hue-rotate(-20deg);
   }
+
+  .layout_active {
+    filter: none;
+  }
+
+  .unvisible {
+    visibility: hidden;
+  }
+
+
+}
