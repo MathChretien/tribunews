@@ -25,12 +25,16 @@
       format.html
       format.pdf do
                    render pdf: "test newspaper",
+                   show_as_html: params.key?('debug'),         # allow debugging based on url param
                    page_size: 'A4',
                    template: "newspapers/pdf.html.erb",
                    layout: "pdf.html",
                    lowquality: true,
-                   zoom: 1,
-                   dpi: 75
+                   zoom: 1.43,
+                   :margin => {:top            => 10,                         # default 10 (mm)
+                           :bottom             => 0,
+                           :left               => 16,
+                           :right              => 0}
                end
       end
   end
