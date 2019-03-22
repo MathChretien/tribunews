@@ -33,6 +33,10 @@
   box-shadow: 8px 16px 34px -11px rgba(0,0,0,0.2);
 }
 
+.photobook_pic:hover {
+  box-shadow: 8px 16px 34px -11px rgba(0,0,0,0.5);
+
+}
 
 
 #layout_title, #layout_00 {
@@ -89,8 +93,9 @@
 
   .layout_title_foreground {
     position: absolute;
-    left: 135px;
-    bottom: 40px;
+    left: 20%;
+    bottom: 4%;
+    width: 60%;
 
   }
   .layout0-image {
