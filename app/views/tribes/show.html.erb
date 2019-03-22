@@ -1,23 +1,30 @@
 <div class = "dashboard structure">
 
   <div class="sidebar">
-    <div class="title-sidebar">
-      <h3><%= @tribe.name%></h3>
+    <div class="title-side-bar" id="tribe_name">
+      <h3 id="tribename_h3"><%= @tribe.name%></h3>
     </div>
     <div class="action-sidebar">
       <div class="button-sidebar">
         <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'Info', edit_tribe_path(current_user.tribe) %> </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %>  </li>
-        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %></li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to 'My Account', edit_user_registration_path %> </li>
+        <li><i class="fas fa-users"></i>&nbsp&nbsp&nbsp <%= link_to "Edit Newspaper", newspapers_show_path %> </li>
       </div>
     </div>
-  </div>
-  <div class="main-content-dashboard">
-
-    <div class="tribe-avatar">
-      <h2>Tribu's Picture</h2>
-      <%= cl_image_tag @tribe.photo%>
+    <div class="member-select">
+      <div class="title-sidebar">
+        <h3>your tribe members</h3>
+      </div>
+      <% current_user.tribe.users.each do |user| %>
+      <%= render  'share/member-tag', user: user %>
+      <% end %>
+      <%= render  'share/member-action', user: @user %>
     </div>
+  </div>
+  <div class="main-content-dashboard"
+  style='background-image: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0.6)), url(<%= @tribe.photo.url(:fx) %>); background-size: cover; background-position:center'>
+
+  <div class="dashboard-middle">
     <div class="countdown">
       <h2 class= "title-dashboard"> </h2>
       <div class="counter">
@@ -26,43 +33,35 @@
           <li> days  </li>
           <li> hours</li>
           <li> minutes</li>
-          <li> seconds</li> </div>
-        </div>
-        <div class="countdown-text">
-          before printing your family newspaper
+          <li> seconds</li>
         </div>
       </div>
-
-      <div class="action-edit">
-        <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper' , newspapers_show_path  %></h2>
+      <div class="countdown-text">
+        before printing your family newspaper
       </div>
     </div>
-    <div class="member-list">
-      <div class="member-select">
-        <h2 class= "title-dashboard"> Members of your Tribe </h2>
-        <%= render  'share/member-action', user: @user %>
-        <% current_user.tribe.users.each do |user| %>
-        <%= render  'share/member-tag', user: user %>
-        <% end %>
-      </div>
 
-      <div class="member-list">
-        <div class="member-select">
-          <h2 class= "title-dashboard"> Tribe Chat </h2>
-          <div class="chat-box">
-          <% current_user.tribe.messages.each do |message| %>
-          <%= message.user.first_name %> :
-          <%= message.message %> <br>
-          <% end %>
-          </div>
-          <div class="chat-action">
-            <%= simple_form_for @message do |f| %>
-            <%= f.input :message, as: :text %>
-            <%= f.button :submit, class:'btn btn-infos' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
+    <div class="action-edit">
+      <h2 class= "title-dashboard"><%=  link_to 'Edit your Family Newspaper', newspapers_show_path  %></h2>
     </div>
+  </div>
+
+  <div class="member-select" id="chat-div">
+    <h3 class= "title-dashboard"> Tribe Chat </h3>
+    <div class="chat-box">
+      <% current_user.tribe.messages.order("created_at ASC").each do |message| %>
+      <%= message.user.first_name %> :
+      <%= message.message %> <br>
+      <% end %>
+    </div>
+    <div class="chat-action">
+      <%= simple_form_for @message, html: {id: "container-chatbox"} do |f| %>
+      <%= f.label "New message" %>
+      <%= f.input :message, as: :text, input_html: {id: "chatbox-element"}, label: false %>
+      <%= f.button :submit, class:'btn btn-infos' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 

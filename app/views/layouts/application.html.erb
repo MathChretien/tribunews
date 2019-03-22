@@ -44,9 +44,10 @@
       <%= yield %>
       <p class="notice <%= 'hidden' unless notice %>"><%= notice %></p>
       <p class="alert <%= 'hidden' unless alert %>"><%= alert %></p>
+       </div>
       <%= render 'share/footer' %>
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
-    </div>
+
   </body>
 </html>

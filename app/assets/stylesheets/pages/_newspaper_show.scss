@@ -1,6 +1,6 @@
 .wrapper {
   background-color: #999;
-  min-height: 100vh;
+  min-height: 95vh;
   // overflow:hidden;
   display:flex;
   color: white; /* temp */
@@ -10,9 +10,6 @@
     font-weight:300;
     font-family:'Open Sans';
   }
-}
-.wrapper.fullscreen {
-  height: 100vh;
 }
 
 .library-pane {
@@ -80,6 +77,7 @@
 }
 
 .library-byheader, .middle-byheader, .layout-byheader {
+
   background: #00B9A0;
   height: 40px;
   display: flex;
@@ -100,7 +98,7 @@
 .middle-content {
   display:flex;
   // height:100%;
-  padding:10px;
+  // padding:4px;
   min-height:80vh;
 
 }
@@ -142,6 +140,9 @@
   padding:8px;
   align-items: flex-start;
   min-height: 50vh;
+  max-height: 95vh;
+  overflow-y: auto;
+
 }
 
 .croix{
