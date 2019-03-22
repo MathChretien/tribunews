@@ -14,6 +14,7 @@ gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
 
+# pdf gems
 gem 'jquery-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'

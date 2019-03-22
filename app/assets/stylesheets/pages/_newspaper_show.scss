@@ -39,7 +39,7 @@
 }
 
 .arrow-sign {
-  color: $tribu-dark;
+  color: hsl(172, 100%, 16%);
 }
 
 .library-header, .middle-header, .layout-header {
@@ -77,8 +77,9 @@
 }
 
 .library-byheader, .middle-byheader, .layout-byheader {
-  background: $tribu-green;
-  height: 45px;
+
+  background: #00B9A0;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

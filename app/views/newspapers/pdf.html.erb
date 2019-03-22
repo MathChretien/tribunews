@@ -1,70 +1,47 @@
-<div class="main-body newspaper-show">
-  <div class="wrapper">
-    <div class="library-pane">
-      <div class ="library-header">
-        <h3><%= @tribe.name%>'pictures</h3>
-      </div>
-      <div class="library-byheader">
-       <%= simple_form_for @new_picture do |f| %>
-       <%= f.input :photo, input_html: { class: 'hidden', id: 'ugly_photo_upload' }, label_html: { class: 'hidden' }  %>
-       <%= f.input :photo_cache, as: :hidden %>
-       <% end %>
-       <div id="nice_upload_button" class="nice_button">add some new family gems</div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "_pagelayouts_pdf" -%>
+    <%= wicked_pdf_stylesheet_link_tag "pages/_newspaper_show" -%>
+    <style>
+      div.alwaysbreak { page-break-before: always; }
+    </style>
+  </head>
+  <body>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[0].layout}", current_page: 0 %>
+    </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[1].layout}", current_page: 1 %>
+    </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[2].layout}", current_page: 2 %>
+    </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[3].layout}", current_page: 3 %>
+    </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[4].layout}", current_page: 4 %>
+    </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[5].layout}", current_page: 5 %>
+    </div>
+     <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[6].layout}", current_page: 6 %>
      </div>
-     <div class = "library-content">
-      <div class="pix-container">
-        <% @newspaper.pictures.each do |pic| %>
-        <div class="pic">
-          <%= cl_image_tag(pic.photo,
-          width:150, height:150, crop: :fill) %>
-        </div>
-        <% end %>
-      </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[7].layout}", current_page: 7 %>
     </div>
-  </div>
-  <div class="middle-pane">
-    <div class ="middle-header">
-      <h3>edit your pages</h3>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[8].layout}", current_page: 8 %>
     </div>
-    <div class="middle-byheader">
-      <div class="btn btn-lg" id="pages_number">
-        <span class="num" style= "display: none"> <%= i = 1  %> </span>
-        <p id = "num-change-page"> Page n°<%= @newspaper.pages[i - 1][:number]%></p>
-      </div>
-      <div class="nice_button" id="btn_fullscreen"><i class="fas fa-expand"></i>
-      </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[9].layout}", current_page: 9 %>
     </div>
-    <div class="middle-content">
-      <div class ="page-back">
-        <span class="arrow-sign" id = "back-button"><i class="fas fa-arrow-circle-left" ></i></span>
-      </div>
-      <div class="edit-pane">
-        <div class="page-edition">
-          <% @newspaper.pages.each do |page| %>
-            <% page.id %>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="page-forward">
-        <span class="arrow-sign" id = "forward-button"><i class="fas fa-arrow-circle-right"></i></span>
-      </div>
+    <div class="alwaysbreak">
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[10].layout}", current_page: 10 %>
     </div>
-  </div>
-
-  <div class="layout-pane">
-    <div class ="layout-header">
-      <h3>page layout</h3>
-    </div>
-    <div class="layout-byheader">
-    </div>
-    <div class="layout-content">
-
-    </div>
-  </div>
-</div>
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-</div>
-
-<script>
-</script>
+    <%= render "pages/page_layouts_pdf/layout_#{@newspaper.pages[11].layout}", current_page: 11 %>
+  </body>
+</html>
