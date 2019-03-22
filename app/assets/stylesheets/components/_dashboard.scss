@@ -98,7 +98,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  min-height:70vh;
+  min-height:85vh;
 }
 
 .tribe-avatar {
@@ -185,7 +185,7 @@
 }
 
 #chatbox-element {
-  hmin-eight: 15vh;
+  min-height: 15vh;
 }
 
 h2.title-dashboard {
@@ -200,7 +200,7 @@ h2.title-dashboard {
   text-align: left;
   border-radius: 5px;
   font-size:16px;
-  hmin-eight: 40vh;
+  min-height: 41vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
